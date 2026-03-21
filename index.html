@@ -11,37 +11,65 @@ body {
     font-family: Arial, sans-serif;
     background: #0b0b0b;
     color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #111;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
     text-align: center;
+    padding: 100px 20px;
 }
 
-header {
-    padding: 50px 20px;
+.hero h1 {
+    font-size: 50px;
 }
 
-h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-p {
+.hero p {
     color: #ccc;
     max-width: 600px;
     margin: auto;
 }
 
+/* SECTIONS */
 .section {
-    padding: 40px 20px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
     background: #1a1a1a;
-    margin: 20px auto;
+    margin: 15px;
     padding: 20px;
-    max-width: 300px;
+    width: 250px;
     border-radius: 10px;
 }
 
+/* FOOTER */
 footer {
+    text-align: center;
     padding: 20px;
     color: #777;
 }
@@ -50,33 +78,47 @@ footer {
 </head>
 <body>
 
-<header>
-<h1>LifeVerse Technologies</h1>
-<p>Building the future of gaming, cryptocurrency, and lifestyle innovation.</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+    <h2>LifeVerse</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Ecosystem</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
 
+<!-- HERO -->
+<div class="hero">
+    <h1>Build. Play. Earn. Live.</h1>
+    <p>LifeVerse Technologies is building a unified ecosystem combining gaming, cryptocurrency, and lifestyle innovation.</p>
+</div>
+
+<!-- ECOSYSTEM -->
 <div class="section">
-<h2>Our Ecosystem</h2>
+    <h2>Our Ecosystem</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>LifeVerse RP</h3>
+            <p>Immersive roleplay gaming experience with real-world systems.</p>
+        </div>
 
-<div class="card">
-<h3>LifeVerse RP</h3>
-<p>Immersive roleplay gaming experience with real-world systems.</p>
+        <div class="card">
+            <h3>LifeCoin (LFC)</h3>
+            <p>Decentralized cryptocurrency powering the LifeVerse economy.</p>
+        </div>
+
+        <div class="card">
+            <h3>Lifetime</h3>
+            <p>Fashion and lifestyle brand connected to digital identity.</p>
+        </div>
+    </div>
 </div>
 
-<div class="card">
-<h3>LifeCoin (LFC)</h3>
-<p>Decentralized cryptocurrency powering the LifeVerse economy.</p>
-</div>
-
-<div class="card">
-<h3>Lifetime</h3>
-<p>Fashion and lifestyle brand connected to digital identity.</p>
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 LifeVerse Technologies</p>
+    <p>© 2026 LifeVerse Technologies</p>
 </footer>
 
 </body>
