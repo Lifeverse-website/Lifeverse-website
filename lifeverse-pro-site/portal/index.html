@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Portal · LifeVerse Technologies</title>
+  <link rel="stylesheet" href="/lifeverse-website/assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/lifeverse-website/">
+      <span class="brand-mark">LV</span>
+      <span>LifeVerse Technologies</span>
+    </a>
+    <nav class="menu">
+      <a href="/lifeverse-website/index.html">Home</a>
+      <a href="/lifeverse-website/about.html">About</a>
+      <a href="/lifeverse-website/ecosystem.html">Ecosystem</a>
+      <a href="/lifeverse-website/projects/lifeverse-rp.html">LifeVerse RP</a>
+      <a href="/lifeverse-website/projects/lifecoin.html">LifeCoin</a>
+      <a href="/lifeverse-website/projects/lifetime.html">Lifetime</a>
+      <a href="/lifeverse-website/documents.html">Documents</a>
+      <a href="/lifeverse-website/roadmap.html">Roadmap</a>
+      <a href="/lifeverse-website/contact.html">Contact</a>
+      <a class="btn small" href="/lifeverse-website/portal/index.html">Portal</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="section"><div class="container portal-shell">
+  <aside class="card sidebar">
+    <div class="kicker">Admin portal</div>
+    <h3>Owner workspace</h3>
+    <p class="muted">Free starter portal using browser storage. Use export backup often.</p>
+    <div class="side-links">
+      <a class="active" href="#dashboard">Dashboard</a>
+      <a href="#projects">Projects</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#records">Records</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#backup">Backup tools</a>
+    </div>
+  </aside>
+
+  <div class="portal-main">
+    <section id="dashboard" class="card tile">
+      <div class="toolbar">
+        <div>
+          <div class="kicker">Overview</div>
+          <h2 style="margin:4px 0 8px;">Founder control dashboard</h2>
+        </div>
+        <div class="toolbar-actions">
+          <button id="exportBackup" class="btn">Export backup</button>
+          <label class="btn">Import backup<input id="importBackup" type="file" accept=".json" hidden></label>
+          <button id="resetData" class="btn">Reset starter data</button>
+        </div>
+      </div>
+      <div class="record-grid" style="margin-top:16px;">
+        <div class="record-box card"><span class="badge info">Public</span><h3>Website ready</h3><p class="muted">Company pages and project portals can be updated from GitHub.</p></div>
+        <div class="record-box card"><span class="badge warning">Internal</span><h3>Portal saves locally</h3><p class="muted">This free version stores data in your browser until you move to a database later.</p></div>
+        <div class="record-box card"><span class="badge success">Backup</span><h3>Export supported</h3><p class="muted">Download JSON backups so your records stay portable.</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="card tile">
+      <div class="section-header"><div class="kicker">Projects</div><h2>Project register</h2></div>
+      <div id="projectsTable"></div>
+      <form id="projectForm" style="margin-top:16px;">
+        <div class="form-grid">
+          <input class="input" name="name" placeholder="Project name" required>
+          <input class="input" name="owner" placeholder="Owner / Lead" required>
+          <input class="input" name="status" placeholder="Status" required>
+          <input class="input" name="priority" placeholder="Priority" required>
+        </div>
+        <div style="margin-top:14px;"><textarea name="notes" placeholder="Project notes"></textarea></div>
+        <div style="margin-top:14px;"><button class="btn primary" type="submit">Add project</button></div>
+      </form>
+    </section>
+
+    <section id="tasks" class="card tile">
+      <div class="section-header"><div class="kicker">Tasks</div><h2>Task tracker</h2></div>
+      <div id="tasksTable"></div>
+      <form id="taskForm" style="margin-top:16px;">
+        <div class="form-grid">
+          <input class="input" name="title" placeholder="Task title" required>
+          <input class="input" name="assignee" placeholder="Assignee" required>
+          <input class="input" name="due" placeholder="Due date" required>
+          <input class="input" name="state" placeholder="State" required>
+        </div>
+        <div style="margin-top:14px;"><button class="btn primary" type="submit">Add task</button></div>
+      </form>
+    </section>
+
+    <section id="records" class="card tile">
+      <div class="section-header"><div class="kicker">Records</div><h2>Records and archives</h2></div>
+      <div id="recordsTable"></div>
+      <form id="recordForm" style="margin-top:16px;">
+        <div class="form-grid">
+          <input class="input" name="type" placeholder="Type" required>
+          <input class="input" name="title" placeholder="Title" required>
+          <input class="input" name="date" placeholder="Date" required>
+          <input class="input" name="ref" placeholder="Reference code" required>
+        </div>
+        <div style="margin-top:14px;"><button class="btn primary" type="submit">Add record</button></div>
+      </form>
+    </section>
+
+    <section id="integrations" class="card tile">
+      <div class="section-header"><div class="kicker">Integrations</div><h2>Integration history</h2></div>
+      <div id="integrationsTable"></div>
+      <form id="integrationForm" style="margin-top:16px;">
+        <div class="form-grid">
+          <input class="input" name="name" placeholder="Integration name" required>
+          <input class="input" name="status" placeholder="Status" required>
+          <input class="input" name="note" placeholder="Note" required>
+        </div>
+        <div style="margin-top:14px;"><button class="btn primary" type="submit">Add integration</button></div>
+      </form>
+    </section>
+
+    <section id="backup" class="card tile">
+      <div class="section-header"><div class="kicker">Backup tools</div><h2>How to protect your records</h2></div>
+      <div class="grid-2">
+        <div>
+          <ul class="list">
+            <li>Use Export backup after major edits</li>
+            <li>Keep dated JSON backups in a cloud folder</li>
+            <li>Upload important backups into the repository when needed</li>
+            <li>When you later add a database, keep this export feature too</li>
+          </ul>
+        </div>
+        <div class="code-box">Repository backup + portal export + document archive = your safest long-term free setup before paid hosting or a custom domain.</div>
+      </div>
+    </section>
+  </div>
+</div></main>
+
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="card tile">
+      <div class="brand"><span class="brand-mark">LV</span><span>LifeVerse Technologies</span></div>
+      <p class="muted">Official company website foundation for LifeVerse RP, LifeCoin and Lifetime, built to be easy to move to a custom domain later.</p>
+    </div>
+    <div class="card tile">
+      <h3>Core Sections</h3>
+      <p><a href="/lifeverse-website/about.html">About</a><br><a href="/lifeverse-website/ecosystem.html">Ecosystem</a><br><a href="/lifeverse-website/documents.html">Documents</a></p>
+    </div>
+    <div class="card tile">
+      <h3>Project Portals</h3>
+      <p><a href="/lifeverse-website/projects/lifeverse-rp.html">LifeVerse RP</a><br><a href="/lifeverse-website/projects/lifecoin.html">LifeCoin</a><br><a href="/lifeverse-website/projects/lifetime.html">Lifetime</a></p>
+    </div>
+  </div>
+  <div class="container" style="margin-top:16px;">© 2026 LifeVerse Technologies. Built for long-term ownership and future domain connection.</div>
+</footer>
+
+<script src='/lifeverse-website/assets/app.js'></script>
+</body></html>

@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "type": "Legal",
+      "title": "Example archive entry",
+      "date": "2026-03-21",
+      "ref": "EXAMPLE-001"
+    }
+  ],
+  "integrations": [
+    {
+      "name": "Website repository",
+      "status": "Active",
+      "note": "Replace with your own integration history."
+    }
+  ]
+}
