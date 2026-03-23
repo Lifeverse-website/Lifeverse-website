@@ -1,25 +1,25 @@
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LifeVerse Technologies</title>
-  <meta name="description" content="Official website of LifeVerse Technologies, home of LifeVerse Games, LifeCoin (LFC), and Lifetime." />
-  <meta name="theme-color" content="#081223" />
+  <meta name="description" content="Official website of LifeVerse Technologies, the ecosystem behind LifeVerse RP, LifeCoin (LFC), and Lifetime." />
+  <meta name="theme-color" content="#081426" />
   <style>
     :root{
-      --bg:#06101f;
-      --bg2:#0a1730;
-      --panel:#0d1d36;
-      --panel2:#102345;
+      --bg:#06111f;
+      --bg2:#0a1830;
+      --panel:#0d1e39;
+      --panel2:#12274b;
       --line:rgba(255,255,255,.09);
-      --text:#f4f7ff;
-      --muted:#a9b6d1;
-      --blue:#19b7ff;
-      --blue2:#6b5cff;
-      --gold:#d9a83a;
-      --gold2:#f3ca6a;
+      --text:#f5f8ff;
+      --muted:#aab8d4;
+      --blue:#18b8ff;
+      --blue2:#6a5cff;
+      --gold:#d8a43a;
+      --gold2:#f5d17b;
       --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:22px;
       --max:1200px;
@@ -32,9 +32,9 @@
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(25,183,255,.15), transparent 28%),
-        radial-gradient(circle at top right, rgba(217,168,58,.12), transparent 22%),
-        linear-gradient(180deg, #040913 0%, #071226 48%, #091733 100%);
+        radial-gradient(circle at top left, rgba(24,184,255,.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(216,164,58,.12), transparent 22%),
+        linear-gradient(180deg, #040914 0%, #071225 45%, #091834 100%);
     }
 
     a{text-decoration:none;color:inherit}
@@ -42,9 +42,11 @@
     .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
 
     .site-header{
-      position:sticky;top:0;z-index:999;
+      position:sticky;
+      top:0;
+      z-index:999;
       backdrop-filter:blur(12px);
-      background:rgba(5,10,20,.78);
+      background:rgba(5,10,20,.8);
       border-bottom:1px solid var(--line);
     }
 
@@ -64,7 +66,9 @@
     }
 
     .brand img{
-      width:54px;height:54px;object-fit:contain;
+      width:54px;
+      height:54px;
+      object-fit:contain;
       border-radius:14px;
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
@@ -72,13 +76,12 @@
       box-shadow:var(--shadow);
     }
 
-    .brand-text{min-width:0}
     .brand-text strong{
       display:block;
       font-size:22px;
       line-height:1.05;
-      letter-spacing:.2px;
     }
+
     .brand-text span{
       display:block;
       color:var(--muted);
@@ -97,6 +100,12 @@
       cursor:pointer;
     }
 
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
     .nav-links{
       display:flex;
       flex-wrap:wrap;
@@ -113,12 +122,12 @@
     .nav-links a:hover{color:var(--text)}
 
     .hero{
-      padding:74px 0 38px;
+      padding:78px 0 38px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.12fr .88fr;
+      grid-template-columns:1.1fr .9fr;
       gap:28px;
       align-items:center;
     }
@@ -173,7 +182,6 @@
       background:linear-gradient(135deg, var(--blue2), var(--blue));
       box-shadow:var(--shadow);
     }
-    .btn-primary:hover{transform:translateY(-1px)}
 
     .btn-secondary{
       border-color:var(--line);
@@ -232,12 +240,10 @@
       font-size:15px;
     }
 
-    section{
-      padding:34px 0;
-    }
+    section{padding:34px 0}
 
     .section-head{
-      max-width:780px;
+      max-width:800px;
       margin-bottom:24px;
     }
 
@@ -264,14 +270,13 @@
       font-size:16px;
     }
 
-    .grid-3,.grid-2,.grid-4{
+    .grid-3,.grid-2{
       display:grid;
       gap:18px;
     }
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 
     .card{
       background:linear-gradient(180deg, rgba(14,29,58,.96), rgba(10,22,44,.96));
@@ -283,7 +288,9 @@
     }
 
     .project-logo{
-      width:84px;height:84px;object-fit:contain;
+      width:84px;
+      height:84px;
+      object-fit:contain;
       margin-bottom:18px;
       border-radius:16px;
       padding:8px;
@@ -311,8 +318,6 @@
       font-size:14px;
     }
 
-    .card ul li{margin-bottom:4px}
-
     .card-actions{
       display:flex;
       gap:12px;
@@ -332,15 +337,15 @@
     }
 
     .small-btn.gold{
-      border-color:rgba(217,168,58,.35);
+      border-color:rgba(216,164,58,.35);
       color:#ffd978;
-      background:rgba(217,168,58,.08);
+      background:rgba(216,164,58,.08);
     }
 
     .small-btn.blue{
-      border-color:rgba(25,183,255,.35);
+      border-color:rgba(24,184,255,.35);
       color:#9edfff;
-      background:rgba(25,183,255,.08);
+      background:rgba(24,184,255,.08);
     }
 
     .doc-item{
@@ -355,8 +360,6 @@
       box-shadow:var(--shadow);
       margin-bottom:14px;
     }
-
-    .doc-item:last-child{margin-bottom:0}
 
     .doc-item strong{
       display:block;
@@ -428,6 +431,17 @@
       word-break:break-word;
     }
 
+    .note{
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(24,184,255,.2);
+      background:rgba(24,184,255,.06);
+      color:#c7eefe;
+      line-height:1.7;
+      font-size:14px;
+    }
+
     .footer{
       padding:34px 0 46px;
       border-top:1px solid var(--line);
@@ -464,19 +478,8 @@
       font-size:13px;
     }
 
-    .note{
-      margin-top:16px;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid rgba(25,183,255,.2);
-      background:rgba(25,183,255,.06);
-      color:#c7eefe;
-      line-height:1.7;
-      font-size:14px;
-    }
-
     @media (max-width: 980px){
-      .hero-grid,.grid-3,.grid-4,.grid-2,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .hero-grid,.grid-3,.grid-2,.contact-grid,.footer-grid{grid-template-columns:1fr}
       .hero-stats{grid-template-columns:1fr}
       .timeline-item{grid-template-columns:1fr}
     }
@@ -498,6 +501,7 @@
       .hero p{font-size:18px}
       .doc-item{flex-direction:column;align-items:flex-start}
     }
+
     @media (max-width: 560px){
       h1{font-size:56px}
       .hero{padding-top:42px}
@@ -525,7 +529,6 @@
           <a href="#ecosystem">Ecosystem</a>
           <a href="#documents">Documents</a>
           <a href="#roadmap">Roadmap</a>
-          <a href="#portal">Portal</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -539,53 +542,51 @@
           <div class="eyebrow">Official Ecosystem Platform</div>
           <h1>Build. Play. Earn. Live.</h1>
           <p>
-            LifeVerse Technologies is building a unified ecosystem that combines gaming,
-            cryptocurrency, lifestyle branding, and organized project operations under one
-            serious company platform.
+            LifeVerse Technologies is a digital innovation brand building a connected ecosystem across
+            gaming, blockchain-powered finance, and lifestyle products under one long-term vision.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#ecosystem">Explore Ecosystem</a>
             <a class="btn btn-secondary" href="#documents">Open Documents</a>
-            <a class="btn btn-secondary" href="#portal">Open Portal</a>
+            <a class="btn btn-secondary" href="#contact">Contact Us</a>
           </div>
 
           <div class="hero-stats">
             <div class="stat">
               <strong>3</strong>
-              <span>Core projects inside one connected company ecosystem.</span>
+              <span>Core project pillars in one unified ecosystem.</span>
             </div>
             <div class="stat">
               <strong>84M</strong>
-              <span>LifeCoin total supply model presented in the ecosystem vision.</span>
+              <span>Total LifeCoin supply model stated in project documentation.</span>
             </div>
             <div class="stat">
-              <strong>24/7</strong>
-              <span>Built for long-term brand growth, records, and expansion.</span>
+              <strong>2024</strong>
+              <span>Registered business foundation under FVA70K SERVICES in Nigeria.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-side">
           <div class="feature-box">
-            <h3>Company Mission</h3>
+            <h3>Official Brand Direction</h3>
             <p>
-              Establish a trusted digital company brand where immersive gaming, blockchain value,
-              and lifestyle identity work together in one scalable ecosystem.
+              Founded by Fortune Godson, LifeVerse Technologies brings together LifeVerse RP,
+              LifeCoin (LFC), and Lifetime as a connected digital ecosystem.
             </p>
           </div>
           <div class="feature-box">
-            <h3>Public + Internal Structure</h3>
+            <h3>Public Company Presence</h3>
             <p>
-              This website acts as your official public face, document hub, community gateway,
-              and future staff portal entry point.
+              This website serves as the official public-facing platform for project presentation,
+              brand communication, document access, and community contact.
             </p>
           </div>
           <div class="feature-box">
-            <h3>Owner-Led Control</h3>
+            <h3>Business Information</h3>
             <p>
-              Structured to support tasks, records, project updates, documents, legal pages,
-              community growth, and future employee allocation under your control.
+              LifeVerse Technologies operates under FVA70K SERVICES, a registered business name in Nigeria.
             </p>
           </div>
         </div>
@@ -596,52 +597,36 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">About</span>
-          <h2>A professional parent company website for your full ecosystem.</h2>
+          <h2>A connected ecosystem across gaming, blockchain, and lifestyle branding.</h2>
           <p>
-            LifeVerse Technologies is the main company platform for LifeVerse Games,
-            LifeCoin (LFC), and Lifetime. This website is designed to serve as the official
-            brand home, project presentation space, document center, and operational foundation.
+            LifeVerse Technologies is focused on building a long-term ecosystem where digital participation,
+            decentralized value, and brand identity work together through multiple connected projects.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Official Company Platform</h3>
+            <h3>Company Overview</h3>
             <p>
-              A central website that presents the company professionally while connecting all
-              projects, records, documents, and contact channels in one place.
+              LifeVerse Technologies is presented as a digital innovation brand founded by Fortune Godson,
+              focused on integrating gaming, cryptocurrency, and lifestyle products.
             </p>
-            <ul>
-              <li>Public brand identity</li>
-              <li>Project overview hub</li>
-              <li>Official document access</li>
-            </ul>
           </div>
 
           <div class="card">
-            <h3>Project Control</h3>
+            <h3>Operating Structure</h3>
             <p>
-              Built to help you keep project information organized and ready for future admin use,
-              employee roles, integration history, and operational scaling.
+              The brand operates under FVA70K SERVICES, a registered business name in Nigeria, providing
+              a formal operating base for public brand and project activity.
             </p>
-            <ul>
-              <li>Records structure</li>
-              <li>Task management readiness</li>
-              <li>Future secure portal expansion</li>
-            </ul>
           </div>
 
           <div class="card">
-            <h3>Long-Term Growth</h3>
+            <h3>Mission</h3>
             <p>
-              Start with a clean public-facing site now, then attach custom domain, business email,
-              and stronger portal systems later without losing your core structure.
+              To create an ecosystem where users can play, earn, and express identity through connected
+              digital and real-world experiences.
             </p>
-            <ul>
-              <li>Cloudflare ready</li>
-              <li>Mobile and desktop optimized</li>
-              <li>Easy future upgrade path</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -651,27 +636,27 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">Ecosystem</span>
-          <h2>One company. Three connected projects.</h2>
+          <h2>One brand. Three core projects.</h2>
           <p>
-            Each project has its own focus while staying connected to the LifeVerse Technologies brand.
+            The LifeVerse ecosystem is built around a gaming project, a blockchain project, and a lifestyle brand.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <img class="project-logo" src="assets/lifeverse-games-logo.png" alt="LifeVerse Games logo">
-            <h3>LifeVerse Games</h3>
+            <img class="project-logo" src="assets/lifeverse-games-logo.png" alt="LifeVerse RP or Games logo">
+            <h3>LifeVerse RP</h3>
             <p>
-              A gaming branch built around community, progression, immersive digital worlds,
-              and long-term player engagement.
+              LifeVerse RP is a next-generation role-playing game designed around immersive multiplayer systems,
+              player progression, property and business ownership, and a dual-currency model.
             </p>
             <ul>
-              <li>Roleplay and game ecosystem growth</li>
-              <li>Community-based development</li>
-              <li>Future content and media portal</li>
+              <li>Role-playing gameplay with persistent world systems</li>
+              <li>Bulk + LifeCoin dual-currency structure</li>
+              <li>Blockchain-linked value layer</li>
             </ul>
             <div class="card-actions">
-              <a class="small-btn blue" href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">Join Discord</a>
+              <a class="small-btn blue" href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">LifeVerse RP Discord</a>
             </div>
           </article>
 
@@ -679,16 +664,16 @@
             <img class="project-logo" src="assets/lifecoin-logo.png" alt="LifeCoin logo" onerror="this.src='assets/lifecoin-lfc-logo.png'">
             <h3>LifeCoin (LFC)</h3>
             <p>
-              A cryptocurrency project designed to act as the digital value layer of the
-              wider LifeVerse ecosystem.
+              LifeCoin is an independent Proof-of-Work blockchain built for fast, low-cost transactions
+              with a fair-launch model and 100% mining distribution.
             </p>
             <ul>
-              <li>Mining-focused presentation</li>
-              <li>Token utility and ecosystem role</li>
-              <li>Community and technical growth</li>
+              <li>Scrypt proof-of-work</li>
+              <li>84,000,000 total supply</li>
+              <li>No premine and no ICO</li>
             </ul>
             <div class="card-actions">
-              <a class="small-btn gold" href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">Join Discord</a>
+              <a class="small-btn gold" href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">LifeCoin Discord</a>
             </div>
           </article>
 
@@ -696,65 +681,15 @@
             <img class="project-logo" src="assets/lifetime-logo.png" alt="Lifetime logo">
             <h3>Lifetime</h3>
             <p>
-              A lifestyle and product branch connecting the LifeVerse identity to fashion,
-              merchandise, and future digital-to-physical brand experiences.
+              Lifetime is the ecosystem’s clothing and lifestyle brand, created to connect digital identity
+              with real-world fashion, accessories, and brand expression.
             </p>
             <ul>
-              <li>Brand identity and product line</li>
-              <li>Merchandise and collections</li>
-              <li>Future e-commerce readiness</li>
+              <li>Fashion and lifestyle direction</li>
+              <li>LifeCoin payment utility</li>
+              <li>Ecosystem-linked brand identity</li>
             </ul>
-            <div class="card-actions">
-              <span class="small-btn">Brand Section</span>
-            </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="lifecoin-model">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">LifeCoin Mining Model</span>
-          <h2>LifeCoin section and mining presentation.</h2>
-          <p>
-            This gives your LifeCoin project a more serious presence on the website and explains
-            the core idea behind the mining ecosystem.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Mining Overview</h3>
-            <p>
-              LifeCoin is presented as a blockchain-based digital asset that can serve as the
-              economic layer inside the wider LifeVerse ecosystem.
-            </p>
-            <ul>
-              <li>Project name: LifeCoin (LFC)</li>
-              <li>Total supply model: 84,000,000 LFC</li>
-              <li>Mining/community-first positioning</li>
-              <li>Future wallet and network tools section</li>
-            </ul>
-            <div class="note">
-              This website version presents the mining model professionally. Real live mining stats,
-              explorer data, or wallet APIs can be connected later.
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Why It Fits the Ecosystem</h3>
-            <p>
-              LifeCoin can be positioned as the digital payment, reward, and value unit that
-              supports community activity, future transactions, and project identity across the ecosystem.
-            </p>
-            <ul>
-              <li>Supports future digital utility</li>
-              <li>Can connect to game and brand systems later</li>
-              <li>Strengthens ecosystem identity</li>
-              <li>Gives the company a blockchain front</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -763,25 +698,24 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">Documents</span>
-          <h2>Official company and project documents.</h2>
+          <h2>Official reference documents.</h2>
           <p>
-            Upload your DOCX files into a folder named <strong>documents</strong> and keep these exact filenames
-            so the links work properly.
+            Public-facing project and business documents should be available here for transparency and review.
           </p>
         </div>
 
         <div class="doc-item">
           <div>
             <strong>LifeVerse Company Profile</strong>
-            <span>Official company overview, mission, structure, and ecosystem presentation.</span>
+            <span>Overview of the brand, founder, mission, ecosystem structure, and market direction.</span>
           </div>
           <a class="small-btn" href="documents/LifeVerse_Company_Profile.docx" target="_blank">Open File</a>
         </div>
 
         <div class="doc-item">
           <div>
-            <strong>LifeVerse Whitepaper</strong>
-            <span>Project and ecosystem whitepaper for the LifeVerse vision.</span>
+            <strong>LifeVerse RP Whitepaper</strong>
+            <span>Gameplay systems, economy model, blockchain integration, and project roadmap.</span>
           </div>
           <a class="small-btn" href="documents/LifeVerse_Whitepaper.docx" target="_blank">Open File</a>
         </div>
@@ -789,17 +723,25 @@
         <div class="doc-item">
           <div>
             <strong>LifeCoin Whitepaper</strong>
-            <span>LifeCoin token, blockchain, and utility overview document.</span>
+            <span>Technology, tokenomics, mining model, and blockchain ecosystem role.</span>
           </div>
           <a class="small-btn" href="documents/LifeCoin_Whitepaper.docx" target="_blank">Open File</a>
         </div>
 
         <div class="doc-item">
           <div>
-            <strong>Lifetime Litepaper</strong>
-            <span>Brand concept, product direction, and lifestyle section overview.</span>
+            <strong>Lifetime Whitepaper / Litepaper</strong>
+            <span>Brand philosophy, market positioning, product lines, and ecosystem integration.</span>
           </div>
           <a class="small-btn" href="documents/Lifetime_litepaper.docx" target="_blank">Open File</a>
+        </div>
+
+        <div class="doc-item">
+          <div>
+            <strong>CAC Registration Document</strong>
+            <span>Business registration record for FVA70K SERVICES in Nigeria.</span>
+          </div>
+          <a class="small-btn" href="documents/CAC.pdf" target="_blank">Open File</a>
         </div>
       </div>
     </section>
@@ -808,9 +750,9 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">Roadmap</span>
-          <h2>Clean rollout path for your company website and projects.</h2>
+          <h2>Version 1 public website direction.</h2>
           <p>
-            This gives your brand a practical development direction without overcomplicating the public site.
+            This Version 1 website is the official public foundation and can be expanded with more dedicated pages later.
           </p>
         </div>
 
@@ -818,10 +760,10 @@
           <div class="timeline-item">
             <div class="phase">Phase 1</div>
             <div>
-              <h3>Public Company Foundation</h3>
+              <h3>Public Brand Presence</h3>
               <p>
-                Launch the main company website with a strong mobile and desktop experience,
-                official documents, contact info, and project presentation.
+                Establish the official public website with real project descriptions, business information,
+                and core documents.
               </p>
             </div>
           </div>
@@ -829,10 +771,9 @@
           <div class="timeline-item">
             <div class="phase">Phase 2</div>
             <div>
-              <h3>Project Identity Expansion</h3>
+              <h3>Project Expansion</h3>
               <p>
-                Develop stronger standalone sections for LifeVerse Games, LifeCoin, and Lifetime,
-                with their own updates, media, and ecosystem details.
+                Add deeper standalone sections or pages for LifeVerse RP, LifeCoin, and Lifetime.
               </p>
             </div>
           </div>
@@ -840,10 +781,9 @@
           <div class="timeline-item">
             <div class="phase">Phase 3</div>
             <div>
-              <h3>Portal and Records</h3>
+              <h3>Community and Utility Growth</h3>
               <p>
-                Add employee allocation tools, task records, integration history, and internal
-                backup/export systems.
+                Expand public communication, document access, and future tools tied to the ecosystem.
               </p>
             </div>
           </div>
@@ -851,50 +791,11 @@
           <div class="timeline-item">
             <div class="phase">Phase 4</div>
             <div>
-              <h3>Domain and Company Email</h3>
+              <h3>Custom Domain and Business Systems</h3>
               <p>
-                Connect a custom domain later and move from Gmail to official company email addresses.
+                Add branded domain email, project sub-sites, and more advanced internal systems when ready.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portal">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">Portal</span>
-          <h2>Internal company structure you can expand later.</h2>
-          <p>
-            Even if this first version is public-facing, it should still reflect the operational system
-            you plan to build behind the scenes.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>What the Portal Should Manage</h3>
-            <ul>
-              <li>Employee roles and permissions</li>
-              <li>Task assignment and status tracking</li>
-              <li>Project notes and milestone records</li>
-              <li>Document archive and history</li>
-              <li>Integration and update logs</li>
-              <li>Backup export files</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Best Basic Operating Procedure</h3>
-            <ul>
-              <li>Keep one official source of company documents</li>
-              <li>Record every major project update</li>
-              <li>Use approved logos and branding only</li>
-              <li>Back up important files regularly</li>
-              <li>Separate public content from internal records</li>
-              <li>Owner approval stays final on major changes</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -906,7 +807,7 @@
           <span class="tag">Contact</span>
           <h2>Official contact channels.</h2>
           <p>
-            These are your current company contact points for community, project, and business communication.
+            These are the active public contact points for enquiries, community access, and business communication.
           </p>
         </div>
 
@@ -915,15 +816,15 @@
             <div class="contact-row">
               <div>📧</div>
               <div>
-                <strong>Company Email</strong>
-                <a href="mailto:lifeverse.technologies@gmail.com">lifeverse.technologies@gmail.com</a>
+                <strong>Email</strong>
+                <a href="mailto:lifeverse_technologies@zohomail.com">lifeverse_technologies@zohomail.com</a>
               </div>
             </div>
 
             <div class="contact-row">
               <div>📞</div>
               <div>
-                <strong>Phone Number</strong>
+                <strong>Phone</strong>
                 <a href="tel:+2348073161117">+234 8073161117</a>
               </div>
             </div>
@@ -931,7 +832,7 @@
             <div class="contact-row">
               <div>🎮</div>
               <div>
-                <strong>LifeVerse Games / RP Discord</strong>
+                <strong>LifeVerse RP Community</strong>
                 <a href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">discord.gg/mhGwugGt55</a>
               </div>
             </div>
@@ -939,29 +840,25 @@
             <div class="contact-row">
               <div>🪙</div>
               <div>
-                <strong>LifeCoin Discord</strong>
+                <strong>LifeCoin Community</strong>
                 <a href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">discord.gg/BQEh763vDg</a>
               </div>
             </div>
           </div>
 
           <div class="card">
-            <h3>Important Setup Notes</h3>
+            <h3>Business Information</h3>
             <p>
-              To make this website work fully, keep these supporting files in your repo:
+              Founder: Fortune Godson
             </p>
-            <ul>
-              <li><strong>assets/lifeverse-technologies-logo.png</strong></li>
-              <li><strong>assets/lifecoin-logo.png</strong></li>
-              <li><strong>assets/lifeverse-games-logo.png</strong></li>
-              <li><strong>assets/lifetime-logo.png</strong></li>
-              <li><strong>documents/LifeVerse_Company_Profile.docx</strong></li>
-              <li><strong>documents/LifeVerse_Whitepaper.docx</strong></li>
-              <li><strong>documents/LifeCoin_Whitepaper.docx</strong></li>
-              <li><strong>documents/Lifetime_litepaper.docx</strong></li>
-            </ul>
+            <p>
+              Operating name in documents: LifeVerse Technologies
+            </p>
+            <p>
+              Registered business name: FVA70K SERVICES
+            </p>
             <div class="note">
-              If any logo or document link does not show, it means the file name or folder path is different.
+              Version 1 is intended as the public-facing official website and can be updated over time as the ecosystem expands.
             </div>
           </div>
         </div>
@@ -975,7 +872,7 @@
         <div>
           <h4>LifeVerse Technologies</h4>
           <p>
-            Official ecosystem platform for LifeVerse Games, LifeCoin (LFC), and Lifetime.
+            Official ecosystem platform for LifeVerse RP, LifeCoin (LFC), and Lifetime.
           </p>
         </div>
 
@@ -986,23 +883,23 @@
             <a href="#ecosystem">Ecosystem</a>
             <a href="#documents">Documents</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="#portal">Portal</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
 
         <div>
           <h4>Contact</h4>
           <div class="footer-links">
-            <a href="mailto:lifeverse.technologies@gmail.com">lifeverse.technologies@gmail.com</a>
+            <a href="mailto:lifeverse_technologies@zohomail.com">lifeverse_technologies@zohomail.com</a>
             <a href="tel:+2348073161117">+234 8073161117</a>
-            <a href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">LifeVerse Games Discord</a>
+            <a href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">LifeVerse RP Discord</a>
             <a href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">LifeCoin Discord</a>
           </div>
         </div>
       </div>
 
       <div class="copyright">
-        © 2026 LifeVerse Technologies. All rights reserved.
+        © 2026 LifeVerse Technologies. Founded by Fortune Godson. Operates under FVA70K SERVICES.
       </div>
     </div>
   </footer>
