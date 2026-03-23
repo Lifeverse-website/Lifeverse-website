@@ -1,27 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LifeVerse Technologies</title>
-  <meta name="description" content="Official website of LifeVerse Technologies, the ecosystem behind LifeVerse RP, LifeCoin (LFC), and Lifetime." />
-  <meta name="theme-color" content="#081426" />
+  <meta name="description" content="Official website of LifeVerse Technologies." />
   <style>
     :root{
-      --bg:#06111f;
-      --bg2:#0a1830;
-      --panel:#0d1e39;
-      --panel2:#12274b;
-      --line:rgba(255,255,255,.09);
-      --text:#f5f8ff;
-      --muted:#aab8d4;
-      --blue:#18b8ff;
-      --blue2:#6a5cff;
-      --gold:#d8a43a;
-      --gold2:#f5d17b;
-      --shadow:0 18px 50px rgba(0,0,0,.35);
-      --radius:22px;
+      --bg:#050816;
+      --bg2:#0a1227;
+      --panel:#0d1830;
+      --panel2:#101f3d;
+      --line:rgba(255,255,255,.08);
+      --text:#f4f7ff;
+      --muted:#a8b2c8;
+      --blue:#1ab8ff;
+      --violet:#6d5dff;
+      --gold:#d9a43a;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --radius:24px;
       --max:1200px;
     }
 
@@ -32,30 +29,30 @@
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(24,184,255,.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(216,164,58,.12), transparent 22%),
-        linear-gradient(180deg, #040914 0%, #071225 45%, #091834 100%);
+        radial-gradient(circle at top left, rgba(26,184,255,.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(217,164,58,.08), transparent 20%),
+        linear-gradient(180deg, #030712 0%, #071021 45%, #09162c 100%);
     }
 
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
 
-    .site-header{
+    .header{
       position:sticky;
       top:0;
       z-index:999;
+      background:rgba(5,8,22,.78);
       backdrop-filter:blur(12px);
-      background:rgba(5,10,20,.8);
       border-bottom:1px solid var(--line);
     }
 
     .nav{
-      min-height:82px;
+      min-height:84px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:20px;
+      align-items:center;
+      gap:18px;
     }
 
     .brand{
@@ -66,14 +63,13 @@
     }
 
     .brand img{
-      width:54px;
-      height:54px;
+      width:56px;
+      height:56px;
       object-fit:contain;
-      border-radius:14px;
+      border-radius:16px;
       background:rgba(255,255,255,.03);
       border:1px solid var(--line);
       padding:6px;
-      box-shadow:var(--shadow);
     }
 
     .brand-text strong{
@@ -87,42 +83,36 @@
       color:var(--muted);
       font-size:12px;
       margin-top:4px;
+      letter-spacing:.5px;
     }
 
-    .nav-toggle{
+    .menu-btn{
       display:none;
       border:1px solid var(--line);
       background:rgba(255,255,255,.03);
       color:var(--text);
-      border-radius:14px;
       padding:12px 16px;
+      border-radius:16px;
       font-weight:700;
       cursor:pointer;
     }
 
-    .nav-wrap{
+    .links{
       display:flex;
-      align-items:center;
       gap:18px;
-    }
-
-    .nav-links{
-      display:flex;
       flex-wrap:wrap;
-      gap:18px;
       align-items:center;
     }
 
-    .nav-links a{
+    .links a{
       color:var(--muted);
       font-size:14px;
-      transition:.2s ease;
     }
 
-    .nav-links a:hover{color:var(--text)}
+    .links a:hover{color:var(--text)}
 
     .hero{
-      padding:78px 0 38px;
+      padding:88px 0 44px;
     }
 
     .hero-grid{
@@ -134,52 +124,51 @@
 
     .eyebrow{
       display:inline-block;
-      font-size:13px;
+      color:var(--blue);
       text-transform:uppercase;
       letter-spacing:3px;
-      color:var(--blue);
+      font-size:13px;
       font-weight:800;
       margin-bottom:18px;
     }
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(44px,7vw,88px);
+      font-size:clamp(46px,7vw,88px);
       line-height:.95;
       letter-spacing:-2px;
     }
 
     .hero p{
-      margin:0 0 28px;
       color:var(--muted);
       font-size:20px;
-      line-height:1.7;
-      max-width:720px;
+      line-height:1.75;
+      margin:0 0 28px;
+      max-width:700px;
     }
 
     .hero-actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-bottom:26px;
+      margin-bottom:28px;
     }
 
     .btn{
-      min-height:52px;
-      padding:0 22px;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:18px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      border-radius:18px;
       font-weight:800;
-      transition:.2s ease;
       border:1px solid transparent;
-      cursor:pointer;
+      transition:.2s ease;
     }
 
     .btn-primary{
-      color:#fff;
-      background:linear-gradient(135deg, var(--blue2), var(--blue));
+      background:linear-gradient(135deg,var(--violet),var(--blue));
+      color:white;
       box-shadow:var(--shadow);
     }
 
@@ -189,7 +178,9 @@
       color:var(--text);
     }
 
-    .hero-stats{
+    .btn:hover{transform:translateY(-1px)}
+
+    .stats{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
@@ -198,7 +189,7 @@
     .stat{
       padding:22px;
       border-radius:20px;
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
     }
@@ -220,46 +211,46 @@
       gap:18px;
     }
 
-    .feature-box{
-      padding:22px;
-      border-radius:22px;
+    .side-card{
+      padding:24px;
+      border-radius:24px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(16,35,69,.94), rgba(10,23,48,.95));
+      background:linear-gradient(180deg, rgba(16,31,61,.96), rgba(10,18,39,.96));
       box-shadow:var(--shadow);
     }
 
-    .feature-box h3{
+    .side-card h3{
       margin:0 0 10px;
       font-size:20px;
     }
 
-    .feature-box p{
+    .side-card p{
       margin:0;
       color:var(--muted);
       line-height:1.75;
       font-size:15px;
     }
 
-    section{padding:34px 0}
+    section{padding:36px 0}
 
     .section-head{
-      max-width:800px;
+      max-width:760px;
       margin-bottom:24px;
     }
 
     .tag{
       display:inline-block;
       color:var(--blue);
-      font-size:13px;
       text-transform:uppercase;
       letter-spacing:2px;
+      font-size:13px;
       font-weight:800;
       margin-bottom:10px;
     }
 
     .section-head h2{
       margin:0 0 10px;
-      font-size:clamp(30px,4vw,44px);
+      font-size:clamp(30px,4vw,46px);
       line-height:1.08;
     }
 
@@ -275,27 +266,27 @@
       gap:18px;
     }
 
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
 
     .card{
-      background:linear-gradient(180deg, rgba(14,29,58,.96), rgba(10,22,44,.96));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
       padding:24px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
       box-shadow:var(--shadow);
       height:100%;
     }
 
-    .project-logo{
-      width:84px;
-      height:84px;
+    .card img{
+      width:82px;
+      height:82px;
       object-fit:contain;
-      margin-bottom:18px;
       border-radius:16px;
       padding:8px;
-      background:rgba(255,255,255,.025);
+      background:rgba(255,255,255,.03);
       border:1px solid var(--line);
+      margin-bottom:18px;
     }
 
     .card h3{
@@ -318,37 +309,7 @@
       font-size:14px;
     }
 
-    .card-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:18px;
-    }
-
-    .small-btn{
-      border:1px solid var(--line);
-      border-radius:14px;
-      min-height:44px;
-      padding:0 16px;
-      display:inline-flex;
-      align-items:center;
-      font-weight:700;
-      background:rgba(255,255,255,.03);
-    }
-
-    .small-btn.gold{
-      border-color:rgba(216,164,58,.35);
-      color:#ffd978;
-      background:rgba(216,164,58,.08);
-    }
-
-    .small-btn.blue{
-      border-color:rgba(24,184,255,.35);
-      color:#9edfff;
-      background:rgba(24,184,255,.08);
-    }
-
-    .doc-item{
+    .doc{
       display:flex;
       justify-content:space-between;
       gap:18px;
@@ -356,22 +317,34 @@
       padding:18px 20px;
       border-radius:18px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(14,29,58,.96), rgba(10,22,44,.96));
+      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
       box-shadow:var(--shadow);
       margin-bottom:14px;
     }
 
-    .doc-item strong{
+    .doc strong{
       display:block;
       margin-bottom:6px;
       font-size:18px;
     }
 
-    .doc-item span{
+    .doc span{
       display:block;
       color:var(--muted);
       line-height:1.65;
       font-size:14px;
+    }
+
+    .doc-btn{
+      min-height:44px;
+      padding:0 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:inline-flex;
+      align-items:center;
+      font-weight:700;
+      white-space:nowrap;
     }
 
     .timeline{
@@ -386,16 +359,16 @@
       padding:20px;
       border-radius:18px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(14,29,58,.96), rgba(10,22,44,.96));
+      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
       box-shadow:var(--shadow);
     }
 
     .phase{
-      color:var(--gold2);
+      color:var(--gold);
+      font-size:13px;
       font-weight:800;
       letter-spacing:1px;
       text-transform:uppercase;
-      font-size:13px;
     }
 
     .timeline-item h3{
@@ -409,7 +382,7 @@
       line-height:1.75;
     }
 
-    .contact-grid{
+    .contact{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:18px;
@@ -423,8 +396,13 @@
     }
 
     .contact-row:last-child{border-bottom:0}
-    .contact-row strong{display:block;margin-bottom:4px}
-    .contact-row span,.contact-row a{
+
+    .contact-row strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .contact-row a,.contact-row span{
       color:var(--muted);
       line-height:1.7;
       font-size:14px;
@@ -435,17 +413,17 @@
       margin-top:16px;
       padding:14px 16px;
       border-radius:16px;
-      border:1px solid rgba(24,184,255,.2);
-      background:rgba(24,184,255,.06);
-      color:#c7eefe;
+      border:1px solid rgba(26,184,255,.2);
+      background:rgba(26,184,255,.06);
+      color:#cbefff;
       line-height:1.7;
       font-size:14px;
     }
 
     .footer{
-      padding:34px 0 46px;
-      border-top:1px solid var(--line);
+      padding:36px 0 46px;
       margin-top:20px;
+      border-top:1px solid var(--line);
     }
 
     .footer-grid{
@@ -479,41 +457,47 @@
     }
 
     @media (max-width: 980px){
-      .hero-grid,.grid-3,.grid-2,.contact-grid,.footer-grid{grid-template-columns:1fr}
-      .hero-stats{grid-template-columns:1fr}
+      .hero-grid,.grid-3,.grid-2,.contact,.footer-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
       .timeline-item{grid-template-columns:1fr}
     }
 
     @media (max-width: 860px){
-      .nav{align-items:flex-start;padding:14px 0}
-      .nav-toggle{display:inline-flex}
-      .nav-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-      .nav-links{
+      .menu-btn{display:inline-flex}
+      .nav{
+        align-items:flex-start;
+        padding:14px 0;
+      }
+      .nav-wrap{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+        gap:12px;
+      }
+      .links{
         display:none;
         flex-direction:column;
         align-items:flex-start;
         width:100%;
-        padding:8px 0 0;
+        padding-top:8px;
       }
-      .nav-links.open{display:flex}
-      .brand-text strong{font-size:18px}
-      .brand-text span{font-size:11px}
-      .hero p{font-size:18px}
-      .doc-item{flex-direction:column;align-items:flex-start}
+      .links.open{display:flex}
+      .doc{flex-direction:column;align-items:flex-start}
     }
 
     @media (max-width: 560px){
       h1{font-size:56px}
-      .hero{padding-top:42px}
-      .btn,.small-btn{width:100%;justify-content:center}
-      .hero-actions,.card-actions{flex-direction:column}
+      .hero p{font-size:18px}
+      .hero-actions,.doc-btn{width:100%}
+      .hero-actions{flex-direction:column}
+      .btn{width:100%}
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="container nav">
-      <a href="#home" class="brand">
+      <a class="brand" href="#home">
         <img src="assets/lifeverse-technologies-logo.png" alt="LifeVerse Technologies logo" onerror="this.src='assets/company-logo.png'">
         <div class="brand-text">
           <strong>LifeVerse Technologies</strong>
@@ -522,8 +506,8 @@
       </a>
 
       <div class="nav-wrap">
-        <button class="nav-toggle" id="navToggle">Menu</button>
-        <nav class="nav-links" id="navLinks">
+        <button class="menu-btn" id="menuBtn">Menu</button>
+        <nav class="links" id="navLinks">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#ecosystem">Ecosystem</a>
@@ -542,8 +526,8 @@
           <div class="eyebrow">Official Ecosystem Platform</div>
           <h1>Build. Play. Earn. Live.</h1>
           <p>
-            LifeVerse Technologies is a digital innovation brand building a connected ecosystem across
-            gaming, blockchain-powered finance, and lifestyle products under one long-term vision.
+            LifeVerse Technologies is a digital innovation brand building a connected ecosystem
+            across gaming, blockchain-powered finance, and lifestyle products.
           </p>
 
           <div class="hero-actions">
@@ -552,14 +536,14 @@
             <a class="btn btn-secondary" href="#contact">Contact Us</a>
           </div>
 
-          <div class="hero-stats">
+          <div class="stats">
             <div class="stat">
               <strong>3</strong>
-              <span>Core project pillars in one unified ecosystem.</span>
+              <span>Core projects in one connected ecosystem.</span>
             </div>
             <div class="stat">
               <strong>84M</strong>
-              <span>Total LifeCoin supply model stated in project documentation.</span>
+              <span>LifeCoin total supply model presented in official documents.</span>
             </div>
             <div class="stat">
               <strong>2024</strong>
@@ -569,21 +553,21 @@
         </div>
 
         <div class="hero-side">
-          <div class="feature-box">
-            <h3>Official Brand Direction</h3>
+          <div class="side-card">
+            <h3>Founded by Fortune Godson</h3>
             <p>
-              Founded by Fortune Godson, LifeVerse Technologies brings together LifeVerse RP,
-              LifeCoin (LFC), and Lifetime as a connected digital ecosystem.
+              LifeVerse Technologies was founded to build a long-term ecosystem connecting immersive digital participation,
+              decentralized value, and real-world brand identity.
             </p>
           </div>
-          <div class="feature-box">
-            <h3>Public Company Presence</h3>
+          <div class="side-card">
+            <h3>Official Public Presence</h3>
             <p>
-              This website serves as the official public-facing platform for project presentation,
-              brand communication, document access, and community contact.
+              This website serves as the public-facing platform for project presentation, company communication,
+              official documents, and community access.
             </p>
           </div>
-          <div class="feature-box">
+          <div class="side-card">
             <h3>Business Information</h3>
             <p>
               LifeVerse Technologies operates under FVA70K SERVICES, a registered business name in Nigeria.
@@ -597,10 +581,10 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">About</span>
-          <h2>A connected ecosystem across gaming, blockchain, and lifestyle branding.</h2>
+          <h2>A unified ecosystem across gaming, blockchain, and lifestyle branding.</h2>
           <p>
-            LifeVerse Technologies is focused on building a long-term ecosystem where digital participation,
-            decentralized value, and brand identity work together through multiple connected projects.
+            LifeVerse Technologies is focused on developing a connected ecosystem where users can
+            play, earn, and express identity across digital and real-world experiences.
           </p>
         </div>
 
@@ -608,24 +592,24 @@
           <div class="card">
             <h3>Company Overview</h3>
             <p>
-              LifeVerse Technologies is presented as a digital innovation brand founded by Fortune Godson,
-              focused on integrating gaming, cryptocurrency, and lifestyle products.
+              LifeVerse Technologies is a digital innovation brand founded by Fortune Godson,
+              built around gaming, cryptocurrency, and lifestyle product integration.
             </p>
           </div>
 
           <div class="card">
             <h3>Operating Structure</h3>
             <p>
-              The brand operates under FVA70K SERVICES, a registered business name in Nigeria, providing
-              a formal operating base for public brand and project activity.
+              The brand operates under FVA70K SERVICES, a registered business name in Nigeria,
+              providing the legal operating base reflected in your public documentation.
             </p>
           </div>
 
           <div class="card">
             <h3>Mission</h3>
             <p>
-              To create an ecosystem where users can play, earn, and express identity through connected
-              digital and real-world experiences.
+              To build an ecosystem where users can participate in digital worlds, interact with
+              decentralized value systems, and engage with a connected public-facing brand.
             </p>
           </div>
         </div>
@@ -636,23 +620,23 @@
       <div class="container">
         <div class="section-head">
           <span class="tag">Ecosystem</span>
-          <h2>One brand. Three core projects.</h2>
+          <h2>One brand. Three project pillars.</h2>
           <p>
-            The LifeVerse ecosystem is built around a gaming project, a blockchain project, and a lifestyle brand.
+            LifeVerse RP, LifeCoin, and Lifetime each serve a distinct role while remaining connected through one ecosystem vision.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <img class="project-logo" src="assets/lifeverse-games-logo.png" alt="LifeVerse RP or Games logo">
+            <img src="assets/lifeverse-games-logo.png" alt="LifeVerse RP logo">
             <h3>LifeVerse RP</h3>
             <p>
-              LifeVerse RP is a next-generation role-playing game designed around immersive multiplayer systems,
-              player progression, property and business ownership, and a dual-currency model.
+              LifeVerse RP is a next-generation role-playing game built around immersive multiplayer systems,
+              player progression, property and business ownership, and a dual-currency economy.
             </p>
             <ul>
-              <li>Role-playing gameplay with persistent world systems</li>
-              <li>Bulk + LifeCoin dual-currency structure</li>
+              <li>Persistent role-playing world</li>
+              <li>Bulk + LifeCoin economic model</li>
               <li>Blockchain-linked value layer</li>
             </ul>
             <div class="card-actions">
@@ -661,16 +645,16 @@
           </article>
 
           <article class="card">
-            <img class="project-logo" src="assets/lifecoin-logo.png" alt="LifeCoin logo" onerror="this.src='assets/lifecoin-lfc-logo.png'">
+            <img src="assets/lifecoin-logo.png" alt="LifeCoin logo" onerror="this.src='assets/lifecoin-lfc-logo.png'">
             <h3>LifeCoin (LFC)</h3>
             <p>
-              LifeCoin is an independent Proof-of-Work blockchain built for fast, low-cost transactions
-              with a fair-launch model and 100% mining distribution.
+              LifeCoin is an independent Proof-of-Work blockchain built for fast, low-cost transactions,
+              with 100% mining distribution, no premine, and no ICO.
             </p>
             <ul>
               <li>Scrypt proof-of-work</li>
               <li>84,000,000 total supply</li>
-              <li>No premine and no ICO</li>
+              <li>Independent blockchain architecture</li>
             </ul>
             <div class="card-actions">
               <a class="small-btn gold" href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">LifeCoin Discord</a>
@@ -678,11 +662,11 @@
           </article>
 
           <article class="card">
-            <img class="project-logo" src="assets/lifetime-logo.png" alt="Lifetime logo">
+            <img src="assets/lifetime-logo.png" alt="Lifetime logo">
             <h3>Lifetime</h3>
             <p>
-              Lifetime is the ecosystem’s clothing and lifestyle brand, created to connect digital identity
-              with real-world fashion, accessories, and brand expression.
+              Lifetime is the ecosystem’s clothing and lifestyle brand, positioned at the intersection
+              of digital identity, premium fashion, and physical brand expression.
             </p>
             <ul>
               <li>Fashion and lifestyle direction</li>
@@ -700,48 +684,48 @@
           <span class="tag">Documents</span>
           <h2>Official reference documents.</h2>
           <p>
-            Public-facing project and business documents should be available here for transparency and review.
+            Public-facing business and project documents should remain available here for transparency and review.
           </p>
         </div>
 
-        <div class="doc-item">
+        <div class="doc">
           <div>
             <strong>LifeVerse Company Profile</strong>
-            <span>Overview of the brand, founder, mission, ecosystem structure, and market direction.</span>
+            <span>Brand overview, founder information, mission, ecosystem structure, and market direction.</span>
           </div>
-          <a class="small-btn" href="documents/LifeVerse_Company_Profile.docx" target="_blank">Open File</a>
+          <a class="doc-btn" href="documents/LifeVerse_Company_Profile.docx" target="_blank">Open File</a>
         </div>
 
-        <div class="doc-item">
+        <div class="doc">
           <div>
             <strong>LifeVerse RP Whitepaper</strong>
-            <span>Gameplay systems, economy model, blockchain integration, and project roadmap.</span>
+            <span>Gameplay systems, project direction, economy model, and blockchain integration.</span>
           </div>
-          <a class="small-btn" href="documents/LifeVerse_Whitepaper.docx" target="_blank">Open File</a>
+          <a class="doc-btn" href="documents/LifeVerse_Whitepaper.docx" target="_blank">Open File</a>
         </div>
 
-        <div class="doc-item">
+        <div class="doc">
           <div>
             <strong>LifeCoin Whitepaper</strong>
-            <span>Technology, tokenomics, mining model, and blockchain ecosystem role.</span>
+            <span>Technology, tokenomics, mining model, and ecosystem role of LifeCoin.</span>
           </div>
-          <a class="small-btn" href="documents/LifeCoin_Whitepaper.docx" target="_blank">Open File</a>
+          <a class="doc-btn" href="documents/LifeCoin_Whitepaper.docx" target="_blank">Open File</a>
         </div>
 
-        <div class="doc-item">
+        <div class="doc">
           <div>
             <strong>Lifetime Whitepaper / Litepaper</strong>
-            <span>Brand philosophy, market positioning, product lines, and ecosystem integration.</span>
+            <span>Brand philosophy, lifestyle positioning, product lines, and ecosystem integration.</span>
           </div>
-          <a class="small-btn" href="documents/Lifetime_litepaper.docx" target="_blank">Open File</a>
+          <a class="doc-btn" href="documents/Lifetime_litepaper.docx" target="_blank">Open File</a>
         </div>
 
-        <div class="doc-item">
+        <div class="doc">
           <div>
             <strong>CAC Registration Document</strong>
             <span>Business registration record for FVA70K SERVICES in Nigeria.</span>
           </div>
-          <a class="small-btn" href="documents/CAC.pdf" target="_blank">Open File</a>
+          <a class="doc-btn" href="documents/CAC.pdf" target="_blank">Open File</a>
         </div>
       </div>
     </section>
@@ -752,7 +736,7 @@
           <span class="tag">Roadmap</span>
           <h2>Version 1 public website direction.</h2>
           <p>
-            This Version 1 website is the official public foundation and can be expanded with more dedicated pages later.
+            This Version 1 website establishes the official public foundation and can expand into deeper project sections later.
           </p>
         </div>
 
@@ -760,10 +744,9 @@
           <div class="timeline-item">
             <div class="phase">Phase 1</div>
             <div>
-              <h3>Public Brand Presence</h3>
+              <h3>Official Public Presence</h3>
               <p>
-                Establish the official public website with real project descriptions, business information,
-                and core documents.
+                Launch the official website with real project descriptions, business wording, and public documents.
               </p>
             </div>
           </div>
@@ -773,7 +756,7 @@
             <div>
               <h3>Project Expansion</h3>
               <p>
-                Add deeper standalone sections or pages for LifeVerse RP, LifeCoin, and Lifetime.
+                Add deeper standalone sections or future dedicated pages for LifeVerse RP, LifeCoin, and Lifetime.
               </p>
             </div>
           </div>
@@ -783,7 +766,7 @@
             <div>
               <h3>Community and Utility Growth</h3>
               <p>
-                Expand public communication, document access, and future tools tied to the ecosystem.
+                Expand public communication, document access, and ecosystem tools as each project matures.
               </p>
             </div>
           </div>
@@ -811,7 +794,7 @@
           </p>
         </div>
 
-        <div class="contact-grid">
+        <div class="contact">
           <div class="card">
             <div class="contact-row">
               <div>📧</div>
@@ -852,13 +835,13 @@
               Founder: Fortune Godson
             </p>
             <p>
-              Operating name in documents: LifeVerse Technologies
+              Public brand name: LifeVerse Technologies
             </p>
             <p>
               Registered business name: FVA70K SERVICES
             </p>
             <div class="note">
-              Version 1 is intended as the public-facing official website and can be updated over time as the ecosystem expands.
+              Version 1 is intended as the official public-facing website and can be updated over time as the ecosystem grows.
             </div>
           </div>
         </div>
@@ -905,14 +888,14 @@
   </footer>
 
   <script>
-    const navToggle = document.getElementById('navToggle');
+    const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
 
-    navToggle.addEventListener('click', () => {
+    menuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
       });
