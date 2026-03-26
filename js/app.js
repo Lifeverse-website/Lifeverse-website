@@ -3,14 +3,26 @@ const navMenu = document.getElementById('navMenu');
 const miningForm = document.getElementById('miningForm');
 const contactForm = document.getElementById('contactForm');
 const statusNode = document.getElementById('contactStatus');
+const yearNode = document.getElementById('year');
 
-document.getElementById('year').textContent = new Date().getFullYear();
+if (yearNode) {
+  yearNode.textContent = new Date().getFullYear();
+}
 
-menuToggle?.addEventListener('click', () => {
-  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!expanded));
-  navMenu.classList.toggle('open');
-});
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    navMenu.classList.toggle('open');
+  });
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 function calculateMiningEstimate(values) {
   const hashrate = Number(values.hashrate) * 1_000_000;
@@ -22,7 +34,10 @@ function calculateMiningEstimate(values) {
   const coinPrice = Number(values.coinPrice);
   const poolFee = Number(values.poolFee) / 100;
 
-  const networkHashrate = (difficulty * Math.pow(2, 32)) / blockTime;
+  const networkHashrate = difficulty > 0
+    ? (difficulty * Math.pow(2, 32)) / blockTime
+    : 0;
+
   const minerShare = networkHashrate > 0 ? hashrate / networkHashrate : 0;
   const blocksPerDay = 86400 / blockTime;
   const dailyCoin = Math.max(blocksPerDay * blockReward * minerShare * (1 - poolFee), 0);
@@ -30,90 +45,63 @@ function calculateMiningEstimate(values) {
   const dailyPower = (power / 1000) * 24 * electricity;
   const dailyNet = dailyRevenue - dailyPower;
 
-  return { dailyCoin, dailyRevenue, dailyPower, dailyNet };
+  return {
+    dailyCoin,
+    dailyRevenue,
+    dailyPower,
+    dailyNet
+  };
 }
 
 function renderMiningResults(result) {
-  document.getElementById('dailyCoin').textContent = result.dailyCoin.toFixed(4);
-  document.getElementById('dailyRevenue').textContent = `$${result.dailyRevenue.toFixed(2)}`;
-  document.getElementById('dailyPower').textContent = `$${result.dailyPower.toFixed(2)}`;
-  document.getElementById('dailyNet').textContent = `$${result.dailyNet.toFixed(2)}`;
+  const dailyCoin = document.getElementById('dailyCoin');
+  const dailyRevenue = document.getElementById('dailyRevenue');
+  const dailyPower = document.getElementById('dailyPower');
+  const dailyNet = document.getElementById('dailyNet');
+
+  if (dailyCoin) dailyCoin.textContent = result.dailyCoin.toFixed(4);
+  if (dailyRevenue) dailyRevenue.textContent = `$${result.dailyRevenue.toFixed(2)}`;
+  if (dailyPower) dailyPower.textContent = `$${result.dailyPower.toFixed(2)}`;
+  if (dailyNet) dailyNet.textContent = `$${result.dailyNet.toFixed(2)}`;
 }
 
 if (miningForm) {
-  const startup = {
-    hashrate: document.getElementById('hashrate').value,
-    difficulty: document.getElementById('difficulty').value,
-    blockReward: document.getElementById('blockReward').value,
-    blockTime: document.getElementById('blockTime').value,
-    power: document.getElementById('power').value,
-    electricity: document.getElementById('electricity').value,
-    coinPrice: document.getElementById('coinPrice').value,
-    poolFee: document.getElementById('poolFee').value
+  const initialData = {
+    hashrate: document.getElementById('hashrate')?.value || 0,
+    difficulty: document.getElementById('difficulty')?.value || 0,
+    blockReward: document.getElementById('blockReward')?.value || 0,
+    blockTime: document.getElementById('blockTime')?.value || 60,
+    power: document.getElementById('power')?.value || 0,
+    electricity: document.getElementById('electricity')?.value || 0,
+    coinPrice: document.getElementById('coinPrice')?.value || 0,
+    poolFee: document.getElementById('poolFee')?.value || 0
   };
 
-  renderMiningResults(calculateMiningEstimate(startup));
+  renderMiningResults(calculateMiningEstimate(initialData));
 
-  miningForm.addEventListener('submit', async (event) => {
+  miningForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const data = {
-      hashrate: document.getElementById('hashrate').value,
-      difficulty: document.getElementById('difficulty').value,
-      blockReward: document.getElementById('blockReward').value,
-      blockTime: document.getElementById('blockTime').value,
-      power: document.getElementById('power').value,
-      electricity: document.getElementById('electricity').value,
-      coinPrice: document.getElementById('coinPrice').value,
-      poolFee: document.getElementById('poolFee').value
+      hashrate: document.getElementById('hashrate')?.value || 0,
+      difficulty: document.getElementById('difficulty')?.value || 0,
+      blockReward: document.getElementById('blockReward')?.value || 0,
+      blockTime: document.getElementById('blockTime')?.value || 60,
+      power: document.getElementById('power')?.value || 0,
+      electricity: document.getElementById('electricity')?.value || 0,
+      coinPrice: document.getElementById('coinPrice')?.value || 0,
+      poolFee: document.getElementById('poolFee')?.value || 0
     };
 
-    renderMiningResults(calculateMiningEstimate(data));
-
-    try {
-      const response = await fetch('/api/mining', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        const payload = await response.json();
-        renderMiningResults(payload.result);
-      }
-    } catch (error) {
-      console.warn('Falling back to local calculator.', error);
-    }
+    const result = calculateMiningEstimate(data);
+    renderMiningResults(result);
   });
 }
 
-if (contactForm) {
-  contactForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    statusNode.textContent = 'Sending...';
+if (contactForm && statusNode) {
+  const params = new URLSearchParams(window.location.search);
 
-    const data = {
-      name: contactForm.elements.name.value,
-      email: contactForm.elements.email.value,
-      subject: contactForm.elements.subject.value,
-      message: contactForm.elements.message.value
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const payload = await response.json();
-      statusNode.textContent = payload.message || 'Message sent.';
-
-      if (response.ok) {
-        contactForm.reset();
-      }
-    } catch (error) {
-      statusNode.textContent = 'Contact endpoint not connected yet. Keep the form for design now or attach email service later.';
-    }
-  });
+  if (params.get('sent') === 'success') {
+    statusNode.textContent = 'Message sent successfully.';
+  }
 }
