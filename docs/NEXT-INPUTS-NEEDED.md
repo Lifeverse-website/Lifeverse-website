@@ -1,36 +1,41 @@
-# Next Inputs Needed
+# Next Inputs Needed for Final Expansion
 
-## Brand assets
-Please confirm or provide:
-- Final LifeVerse Technologies logo
-- Final LifeVerse RP logo
-- Final LifeCoin (LFC) logo
-- Final Lifetime logo
-- Optional transparent PNG or SVG versions
+## Content
+Still needed for full final production build:
+- final about text
+- final mission statement
+- final vision statement
+- final footer details
+- official contact phone number if needed on site
 
-## Website content
-Please confirm:
-- Official company email
-- Phone number
-- Social media links
-- Final About / Mission / Vision text
-- Footer copyright text
+## LifeCoin
+Needed for a more exact token and mining section:
+- final mining economics
+- reward logic
+- supply summary
+- token utility breakdown
+- final whitepaper download section
 
-## LifeCoin mining section
-To finalize the mining model, confirm:
-- Block reward
-- Block time
-- Starting difficulty display
-- Target miner type (CPU, GPU, both)
-- Whether this is a calculator only or a future live mining dashboard
+## LifeVerse RP
+Needed for stronger project presentation:
+- gameplay screenshots
+- storyline summary
+- features list
+- roadmap milestones
+- launcher or download plan
 
-## Backend roadmap
-Choose what you want next:
-- Contact form email sending
-- Admin dashboard
-- Login/signup
-- Database
-- Document download portal
-- Whitepaper pages
-- Lifetime store
-- RP portal
+## Lifetime
+Needed for fashion section expansion:
+- product images
+- product categories
+- collection naming
+- store direction
+- release plan
+
+## Platform expansion
+For later backend growth:
+- admin dashboard requirement
+- login/signup requirement
+- database decision
+- analytics setup
+- email marketing or newsletter setup
