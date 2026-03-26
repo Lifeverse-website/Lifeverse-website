@@ -4,902 +4,256 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LifeVerse Technologies</title>
-  <meta name="description" content="Official website of LifeVerse Technologies." />
-  <style>
-    :root{
-      --bg:#050816;
-      --bg2:#0a1227;
-      --panel:#0d1830;
-      --panel2:#101f3d;
-      --line:rgba(255,255,255,.08);
-      --text:#f4f7ff;
-      --muted:#a8b2c8;
-      --blue:#1ab8ff;
-      --violet:#6d5dff;
-      --gold:#d9a43a;
-      --shadow:0 20px 50px rgba(0,0,0,.35);
-      --radius:24px;
-      --max:1200px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(26,184,255,.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(217,164,58,.08), transparent 20%),
-        linear-gradient(180deg, #030712 0%, #071021 45%, #09162c 100%);
-    }
-
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
-
-    .header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(5,8,22,.78);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      min-height:84px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
-
-    .brand img{
-      width:56px;
-      height:56px;
-      object-fit:contain;
-      border-radius:16px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      padding:6px;
-    }
-
-    .brand-text strong{
-      display:block;
-      font-size:22px;
-      line-height:1.05;
-    }
-
-    .brand-text span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-      margin-top:4px;
-      letter-spacing:.5px;
-    }
-
-    .menu-btn{
-      display:none;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      padding:12px 16px;
-      border-radius:16px;
-      font-weight:700;
-      cursor:pointer;
-    }
-
-    .links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .links a{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .links a:hover{color:var(--text)}
-
-    .hero{
-      padding:88px 0 44px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      color:var(--blue);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:18px;
-    }
-
-    h1{
-      margin:0 0 18px;
-      font-size:clamp(46px,7vw,88px);
-      line-height:.95;
-      letter-spacing:-2px;
-    }
-
-    .hero p{
-      color:var(--muted);
-      font-size:20px;
-      line-height:1.75;
-      margin:0 0 28px;
-      max-width:700px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:28px;
-    }
-
-    .btn{
-      min-height:54px;
-      padding:0 24px;
-      border-radius:18px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      border:1px solid transparent;
-      transition:.2s ease;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--violet),var(--blue));
-      color:white;
-      box-shadow:var(--shadow);
-    }
-
-    .btn-secondary{
-      border-color:var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .stat{
-      padding:22px;
-      border-radius:20px;
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .stat strong{
-      display:block;
-      font-size:34px;
-      margin-bottom:8px;
-    }
-
-    .stat span{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    .hero-side{
-      display:grid;
-      gap:18px;
-    }
-
-    .side-card{
-      padding:24px;
-      border-radius:24px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(16,31,61,.96), rgba(10,18,39,.96));
-      box-shadow:var(--shadow);
-    }
-
-    .side-card h3{
-      margin:0 0 10px;
-      font-size:20px;
-    }
-
-    .side-card p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:15px;
-    }
-
-    section{padding:36px 0}
-
-    .section-head{
-      max-width:760px;
-      margin-bottom:24px;
-    }
-
-    .tag{
-      display:inline-block;
-      color:var(--blue);
-      text-transform:uppercase;
-      letter-spacing:2px;
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .section-head h2{
-      margin:0 0 10px;
-      font-size:clamp(30px,4vw,46px);
-      line-height:1.08;
-    }
-
-    .section-head p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:16px;
-    }
-
-    .grid-3,.grid-2{
-      display:grid;
-      gap:18px;
-    }
-
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-
-    .card{
-      padding:24px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
-      box-shadow:var(--shadow);
-      height:100%;
-    }
-
-    .card img{
-      width:82px;
-      height:82px;
-      object-fit:contain;
-      border-radius:16px;
-      padding:8px;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      margin-bottom:18px;
-    }
-
-    .card h3{
-      margin:0 0 10px;
-      font-size:26px;
-    }
-
-    .card p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:15px;
-    }
-
-    .card ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:14px;
-    }
-
-    .doc{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      align-items:center;
-      padding:18px 20px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
-      box-shadow:var(--shadow);
-      margin-bottom:14px;
-    }
-
-    .doc strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:18px;
-    }
-
-    .doc span{
-      display:block;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:14px;
-    }
-
-    .doc-btn{
-      min-height:44px;
-      padding:0 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      display:inline-flex;
-      align-items:center;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .timeline{
-      display:grid;
-      gap:14px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:18px;
-      padding:20px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(13,24,48,.96), rgba(9,18,37,.96));
-      box-shadow:var(--shadow);
-    }
-
-    .phase{
-      color:var(--gold);
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-
-    .timeline-item h3{
-      margin:0 0 8px;
-      font-size:22px;
-    }
-
-    .timeline-item p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-    }
-
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
-    .contact-row{
-      display:flex;
-      gap:12px;
-      padding:14px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .contact-row:last-child{border-bottom:0}
-
-    .contact-row strong{
-      display:block;
-      margin-bottom:4px;
-    }
-
-    .contact-row a,.contact-row span{
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-      word-break:break-word;
-    }
-
-    .note{
-      margin-top:16px;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid rgba(26,184,255,.2);
-      background:rgba(26,184,255,.06);
-      color:#cbefff;
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .footer{
-      padding:36px 0 46px;
-      margin-top:20px;
-      border-top:1px solid var(--line);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr .9fr;
-      gap:18px;
-    }
-
-    .footer h4{
-      margin:0 0 12px;
-      font-size:17px;
-    }
-
-    .footer p,.footer a{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:14px;
-    }
-
-    .footer-links{
-      display:grid;
-      gap:8px;
-    }
-
-    .copyright{
-      margin-top:22px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    @media (max-width: 980px){
-      .hero-grid,.grid-3,.grid-2,.contact,.footer-grid{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr}
-      .timeline-item{grid-template-columns:1fr}
-    }
-
-    @media (max-width: 860px){
-      .menu-btn{display:inline-flex}
-      .nav{
-        align-items:flex-start;
-        padding:14px 0;
-      }
-      .nav-wrap{
-        display:flex;
-        flex-direction:column;
-        align-items:flex-end;
-        gap:12px;
-      }
-      .links{
-        display:none;
-        flex-direction:column;
-        align-items:flex-start;
-        width:100%;
-        padding-top:8px;
-      }
-      .links.open{display:flex}
-      .doc{flex-direction:column;align-items:flex-start}
-    }
-
-    @media (max-width: 560px){
-      h1{font-size:56px}
-      .hero p{font-size:18px}
-      .hero-actions,.doc-btn{width:100%}
-      .hero-actions{flex-direction:column}
-      .btn{width:100%}
-    }
-  </style>
+  <meta name="description" content="LifeVerse Technologies brings together LifeVerse RP, LifeCoin (LFC), LifeVerse Games, and Lifetime in one clean digital home." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
+  <div class="site-shell">
+    <header class="topbar">
       <a class="brand" href="#home">
-        <img src="assets/lifeverse-technologies-logo.png" alt="LifeVerse Technologies logo" onerror="this.src='assets/company-logo.png'">
-        <div class="brand-text">
-          <strong>LifeVerse Technologies</strong>
-          <span>Official Ecosystem Platform</span>
+        <img src="assets/img/lifeverse-technologies-logo.png" alt="LifeVerse Technologies logo" class="brand-logo" />
+        <div>
+          <div class="brand-title">LifeVerse Technologies</div>
+          <div class="brand-subtitle">Gaming • Crypto • Lifestyle</div>
         </div>
       </a>
 
-      <div class="nav-wrap">
-        <button class="menu-btn" id="menuBtn">Menu</button>
-        <nav class="links" id="navLinks">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#ecosystem">Ecosystem</a>
-          <a href="#documents">Documents</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Official Ecosystem Platform</div>
-          <h1>Build. Play. Earn. Live.</h1>
-          <p>
-            LifeVerse Technologies is a digital innovation brand building a connected ecosystem
-            across gaming, blockchain-powered finance, and lifestyle products.
+      <nav class="nav" id="navMenu">
+        <a href="#projects">Projects</a>
+        <a href="#mining">Mining</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#docs">Docs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero panel panel-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">One clean source of truth</p>
+          <h1>Build the LifeVerse ecosystem from one official home.</h1>
+          <p class="lede">
+            This frontend is production-ready for Cloudflare Pages. It presents the company,
+            the RP world, LifeCoin, games, lifestyle brand, and a starter mining model with room
+            for backend APIs later.
           </p>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#ecosystem">Explore Ecosystem</a>
-            <a class="btn btn-secondary" href="#documents">Open Documents</a>
-            <a class="btn btn-secondary" href="#contact">Contact Us</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <strong>3</strong>
-              <span>Core projects in one connected ecosystem.</span>
-            </div>
-            <div class="stat">
-              <strong>84M</strong>
-              <span>LifeCoin total supply model presented in official documents.</span>
-            </div>
-            <div class="stat">
-              <strong>2024</strong>
-              <span>Registered business foundation under FVA70K SERVICES in Nigeria.</span>
-            </div>
+            <a class="button button-primary" href="#projects">Explore projects</a>
+            <a class="button" href="#mining">Open mining model</a>
           </div>
         </div>
 
-        <div class="hero-side">
-          <div class="side-card">
-            <h3>Founded by Fortune Godson</h3>
-            <p>
-              LifeVerse Technologies was founded to build a long-term ecosystem connecting immersive digital participation,
-              decentralized value, and real-world brand identity.
-            </p>
-          </div>
-          <div class="side-card">
-            <h3>Official Public Presence</h3>
-            <p>
-              This website serves as the public-facing platform for project presentation, company communication,
-              official documents, and community access.
-            </p>
-          </div>
-          <div class="side-card">
-            <h3>Business Information</h3>
-            <p>
-              LifeVerse Technologies operates under FVA70K SERVICES, a registered business name in Nigeria.
-            </p>
-          </div>
+        <div class="hero-art">
+          <img src="assets/img/lifeverse-brand-poster.jpeg" alt="LifeVerse brand poster" />
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">About</span>
-          <h2>A unified ecosystem across gaming, blockchain, and lifestyle branding.</h2>
-          <p>
-            LifeVerse Technologies is focused on developing a connected ecosystem where users can
-            play, earn, and express identity across digital and real-world experiences.
-          </p>
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Core brands</p>
+          <h2>Built as one ecosystem</h2>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Company Overview</h3>
-            <p>
-              LifeVerse Technologies is a digital innovation brand founded by Fortune Godson,
-              built around gaming, cryptocurrency, and lifestyle product integration.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Operating Structure</h3>
-            <p>
-              The brand operates under FVA70K SERVICES, a registered business name in Nigeria,
-              providing the legal operating base reflected in your public documentation.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Mission</h3>
-            <p>
-              To build an ecosystem where users can participate in digital worlds, interact with
-              decentralized value systems, and engage with a connected public-facing brand.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ecosystem">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">Ecosystem</span>
-          <h2>One brand. Three project pillars.</h2>
-          <p>
-            LifeVerse RP, LifeCoin, and Lifetime each serve a distinct role while remaining connected through one ecosystem vision.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <img src="assets/lifeverse-games-logo.png" alt="LifeVerse RP logo">
+        <div class="card-grid">
+          <article class="project-card panel">
+            <img src="assets/icons/lifeverse-rp.svg" alt="LifeVerse RP logo" class="project-logo" />
             <h3>LifeVerse RP</h3>
             <p>
-              LifeVerse RP is a next-generation role-playing game built around immersive multiplayer systems,
-              player progression, property and business ownership, and a dual-currency economy.
+              Next-generation role-playing game with jobs, housing, businesses, vehicles,
+              organizations, and dual-currency gameplay.
             </p>
-            <ul>
-              <li>Persistent role-playing world</li>
-              <li>Bulk + LifeCoin economic model</li>
-              <li>Blockchain-linked value layer</li>
-            </ul>
-            <div class="card-actions">
-              <a class="small-btn blue" href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">LifeVerse RP Discord</a>
-            </div>
+            <a class="button" href="#contact">Open RP project</a>
           </article>
 
-          <article class="card">
-            <img src="assets/lifecoin-logo.png" alt="LifeCoin logo" onerror="this.src='assets/lifecoin-lfc-logo.png'">
+          <article class="project-card panel">
+            <img src="assets/img/lifecoin-logo.png" alt="LifeCoin logo" class="project-logo" />
             <h3>LifeCoin (LFC)</h3>
             <p>
-              LifeCoin is an independent Proof-of-Work blockchain built for fast, low-cost transactions,
-              with 100% mining distribution, no premine, and no ICO.
+              Independent Proof-of-Work blockchain section with token overview, ecosystem role,
+              and a mining calculator users can test directly on the site.
             </p>
-            <ul>
-              <li>Scrypt proof-of-work</li>
-              <li>84,000,000 total supply</li>
-              <li>Independent blockchain architecture</li>
-            </ul>
-            <div class="card-actions">
-              <a class="small-btn gold" href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">LifeCoin Discord</a>
-            </div>
+            <a class="button" href="#mining">Open LifeCoin</a>
           </article>
 
-          <article class="card">
-            <img src="assets/lifetime-logo.png" alt="Lifetime logo">
+          <article class="project-card panel">
+            <img src="assets/icons/lifeverse-games.svg" alt="LifeVerse Games logo" class="project-logo" />
+            <h3>LifeVerse Games</h3>
+            <p>
+              Publishing and game expansion arm for future titles, launcher tools, seasonal content,
+              player onboarding, and media releases.
+            </p>
+            <a class="button" href="#roadmap">Open Games</a>
+          </article>
+
+          <article class="project-card panel">
+            <img src="assets/icons/lifetime.svg" alt="Lifetime logo" class="project-logo" />
             <h3>Lifetime</h3>
             <p>
-              Lifetime is the ecosystem’s clothing and lifestyle brand, positioned at the intersection
-              of digital identity, premium fashion, and physical brand expression.
+              Fashion and lifestyle brand connecting digital identity, community culture,
+              and physical products under the same family design language.
             </p>
-            <ul>
-              <li>Fashion and lifestyle direction</li>
-              <li>LifeCoin payment utility</li>
-              <li>Ecosystem-linked brand identity</li>
-            </ul>
+            <a class="button" href="#docs">Open Lifetime</a>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="documents">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">Documents</span>
-          <h2>Official reference documents.</h2>
-          <p>
-            Public-facing business and project documents should remain available here for transparency and review.
+      <section id="mining" class="section panel mining-panel">
+        <div class="section-heading">
+          <p class="eyebrow">LifeCoin mining model</p>
+          <h2>Calculator for miners and community users</h2>
+          <p class="section-copy">
+            This starter model is flexible. Until your final chain economics are locked,
+            users can test expected output with custom hashrate, difficulty, reward, power use,
+            and electricity cost.
           </p>
         </div>
 
-        <div class="doc">
-          <div>
-            <strong>LifeVerse Company Profile</strong>
-            <span>Brand overview, founder information, mission, ecosystem structure, and market direction.</span>
-          </div>
-          <a class="doc-btn" href="documents/LifeVerse_Company_Profile.docx" target="_blank">Open File</a>
+        <form id="miningForm" class="mining-grid">
+          <label>
+            Miner hashrate (MH/s)
+            <input type="number" step="0.01" min="0" id="hashrate" value="500" />
+          </label>
+
+          <label>
+            Network difficulty
+            <input type="number" step="0.0001" min="0" id="difficulty" value="1200" />
+          </label>
+
+          <label>
+            Block reward (LFC)
+            <input type="number" step="0.0001" min="0" id="blockReward" value="50" />
+          </label>
+
+          <label>
+            Block time (seconds)
+            <input type="number" step="1" min="1" id="blockTime" value="60" />
+          </label>
+
+          <label>
+            Power draw (watts)
+            <input type="number" step="1" min="0" id="power" value="1400" />
+          </label>
+
+          <label>
+            Electricity cost ($/kWh)
+            <input type="number" step="0.0001" min="0" id="electricity" value="0.12" />
+          </label>
+
+          <label>
+            LFC price (USD)
+            <input type="number" step="0.0001" min="0" id="coinPrice" value="0.10" />
+          </label>
+
+          <label>
+            Pool fee (%)
+            <input type="number" step="0.01" min="0" id="poolFee" value="1" />
+          </label>
+
+          <button type="submit" class="button button-primary full-width">Calculate mining estimate</button>
+        </form>
+
+        <div class="result-grid" id="miningResults">
+          <div class="result-card"><span>Daily LFC</span><strong id="dailyCoin">0</strong></div>
+          <div class="result-card"><span>Daily revenue</span><strong id="dailyRevenue">$0.00</strong></div>
+          <div class="result-card"><span>Daily power cost</span><strong id="dailyPower">$0.00</strong></div>
+          <div class="result-card"><span>Daily net</span><strong id="dailyNet">$0.00</strong></div>
         </div>
 
-        <div class="doc">
-          <div>
-            <strong>LifeVerse RP Whitepaper</strong>
-            <span>Gameplay systems, project direction, economy model, and blockchain integration.</span>
-          </div>
-          <a class="doc-btn" href="documents/LifeVerse_Whitepaper.docx" target="_blank">Open File</a>
-        </div>
+        <p class="fine-print">
+          Note: this is a planning model, not financial advice. Replace the defaults with your final
+          chain metrics when your production economics are confirmed.
+        </p>
+      </section>
 
-        <div class="doc">
-          <div>
-            <strong>LifeCoin Whitepaper</strong>
-            <span>Technology, tokenomics, mining model, and ecosystem role of LifeCoin.</span>
-          </div>
-          <a class="doc-btn" href="documents/LifeCoin_Whitepaper.docx" target="_blank">Open File</a>
-        </div>
-
-        <div class="doc">
-          <div>
-            <strong>Lifetime Whitepaper / Litepaper</strong>
-            <span>Brand philosophy, lifestyle positioning, product lines, and ecosystem integration.</span>
-          </div>
-          <a class="doc-btn" href="documents/Lifetime_litepaper.docx" target="_blank">Open File</a>
-        </div>
-
-        <div class="doc">
-          <div>
-            <strong>CAC Registration Document</strong>
-            <span>Business registration record for FVA70K SERVICES in Nigeria.</span>
-          </div>
-          <a class="doc-btn" href="documents/CAC.pdf" target="_blank">Open File</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">Roadmap</span>
-          <h2>Version 1 public website direction.</h2>
+      <section id="roadmap" class="section two-col">
+        <article class="panel">
+          <p class="eyebrow">Current setup</p>
+          <h2>Built free now, ready to grow later</h2>
           <p>
-            This Version 1 website establishes the official public foundation and can expand into deeper project sections later.
+            The frontend is static, fast, and easy to host on Cloudflare Pages.
+            The backend starter uses Pages Functions for contact handling and JSON endpoints.
+            That keeps setup light while staying ready for expansion.
           </p>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Need next</p>
+          <h2>What you still need to confirm</h2>
+          <ul class="check-list">
+            <li>Final LifeCoin economics and mining formula defaults</li>
+            <li>Official text for the whitepaper and token page</li>
+            <li>Game screenshots and media kit</li>
+            <li>Product photos for Lifetime</li>
+            <li>Final brand logos if you want changes from the starter matching style</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="docs" class="section panel">
+        <div class="section-heading">
+          <p class="eyebrow">Documentation</p>
+          <h2>Included in this package</h2>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="phase">Phase 1</div>
-            <div>
-              <h3>Official Public Presence</h3>
-              <p>
-                Launch the official website with real project descriptions, business wording, and public documents.
-              </p>
-            </div>
+        <div class="docs-grid">
+          <div>
+            <h3>Frontend</h3>
+            <p>Responsive landing page, mobile menu, project sections, mining calculator, clean typography, and reusable panel system.</p>
           </div>
-
-          <div class="timeline-item">
-            <div class="phase">Phase 2</div>
-            <div>
-              <h3>Project Expansion</h3>
-              <p>
-                Add deeper standalone sections or future dedicated pages for LifeVerse RP, LifeCoin, and Lifetime.
-              </p>
-            </div>
+          <div>
+            <h3>Backend starter</h3>
+            <p>Cloudflare Pages Functions for a contact endpoint and mining JSON endpoint you can extend later.</p>
           </div>
-
-          <div class="timeline-item">
-            <div class="phase">Phase 3</div>
-            <div>
-              <h3>Community and Utility Growth</h3>
-              <p>
-                Expand public communication, document access, and ecosystem tools as each project matures.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="phase">Phase 4</div>
-            <div>
-              <h3>Custom Domain and Business Systems</h3>
-              <p>
-                Add branded domain email, project sub-sites, and more advanced internal systems when ready.
-              </p>
-            </div>
+          <div>
+            <h3>Docs</h3>
+            <p>Readme, deployment steps, structure guide, and branding notes so the project stays maintainable.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <span class="tag">Contact</span>
-          <h2>Official contact channels.</h2>
-          <p>
-            These are the active public contact points for enquiries, community access, and business communication.
-          </p>
+      <section id="contact" class="section panel">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Official contact form starter</h2>
         </div>
 
-        <div class="contact">
-          <div class="card">
-            <div class="contact-row">
-              <div>📧</div>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:lifeverse_technologies@zohomail.com">lifeverse_technologies@zohomail.com</a>
-              </div>
-            </div>
+        <form id="contactForm" class="contact-form">
+          <label>
+            Full name
+            <input type="text" name="name" required />
+          </label>
 
-            <div class="contact-row">
-              <div>📞</div>
-              <div>
-                <strong>Phone</strong>
-                <a href="tel:+2348073161117">+234 8073161117</a>
-              </div>
-            </div>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
 
-            <div class="contact-row">
-              <div>🎮</div>
-              <div>
-                <strong>LifeVerse RP Community</strong>
-                <a href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">discord.gg/mhGwugGt55</a>
-              </div>
-            </div>
+          <label>
+            Subject
+            <input type="text" name="subject" required />
+          </label>
 
-            <div class="contact-row">
-              <div>🪙</div>
-              <div>
-                <strong>LifeCoin Community</strong>
-                <a href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">discord.gg/BQEh763vDg</a>
-              </div>
-            </div>
-          </div>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
 
-          <div class="card">
-            <h3>Business Information</h3>
-            <p>
-              Founder: Fortune Godson
-            </p>
-            <p>
-              Public brand name: LifeVerse Technologies
-            </p>
-            <p>
-              Registered business name: FVA70K SERVICES
-            </p>
-            <div class="note">
-              Version 1 is intended as the official public-facing website and can be updated over time as the ecosystem grows.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+          <button type="submit" class="button button-primary">Send message</button>
+          <p id="contactStatus" class="fine-print"></p>
+        </form>
+      </section>
+    </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>LifeVerse Technologies</h4>
-          <p>
-            Official ecosystem platform for LifeVerse RP, LifeCoin (LFC), and Lifetime.
-          </p>
-        </div>
+    <footer class="footer">
+      <p>© <span id="year"></span> LifeVerse Technologies. Built for Cloudflare Pages.</p>
+    </footer>
+  </div>
 
-        <div>
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#ecosystem">Ecosystem</a>
-            <a href="#documents">Documents</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Contact</h4>
-          <div class="footer-links">
-            <a href="mailto:lifeverse_technologies@zohomail.com">lifeverse_technologies@zohomail.com</a>
-            <a href="tel:+2348073161117">+234 8073161117</a>
-            <a href="https://discord.gg/mhGwugGt55" target="_blank" rel="noopener noreferrer">LifeVerse RP Discord</a>
-            <a href="https://discord.gg/BQEh763vDg" target="_blank" rel="noopener noreferrer">LifeCoin Discord</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © 2026 LifeVerse Technologies. Founded by Fortune Godson. Operates under FVA70K SERVICES.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
-    });
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
