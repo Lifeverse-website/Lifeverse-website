@@ -1,36 +1,48 @@
-# LifeVerse Brand Guide
+# LifeVerse Technologies Brand Guide
 
-## Master identity
-LifeVerse Technologies is the parent brand. The curved **slong** symbol is the permanent core identity that must remain visually consistent across all sub-brands.
+## Core identity
+LifeVerse Technologies uses the slong emblem as the permanent parent identity across the ecosystem.
 
 ## Brand family
-- **LifeVerse Technologies** — black, silver, and gold premium corporate identity
-- **LifeVerse RP** — energetic gaming identity using silver, blue, and green accents
-- **LifeCoin (LFC)** — premium coin identity using gold, silver, and black
-- **Lifetime** — fashion identity using pink, silver, and deep black/plum tones
+The brand family includes:
+- LifeVerse Technologies
+- LifeVerse RP
+- LifeCoin (LFC)
+- Lifetime
 
-## Logo system rules
-1. Keep the slong shape consistent across all logos.
-2. Use a premium metallic finish where possible.
-3. Do not stretch or distort the slong mark.
-4. Preserve clean spacing around each logo.
-5. Use high-contrast backgrounds for best presentation.
+## Style direction
+The visual language should remain:
+- premium
+- futuristic
+- clean
+- high contrast
+- dark luxury interface with strong neon or metallic accents
 
-## Typography direction
-- Primary style: bold geometric sans-serif
-- Use strong uppercase headlines for logos and major sections
-- Keep subtext clean and minimal
+## Color direction
+### LifeVerse Technologies
+- black
+- white
+- gold
+- metallic highlights
 
-## Website visual direction
-- Dark luxury UI
-- Soft neon glow accents
-- Rounded cards and premium spacing
-- Gaming + crypto + lifestyle balance in one system
+### LifeVerse RP
+- silver
+- blue
+- green
+- futuristic gaming tone
 
-## Asset usage
-Use separate exports for:
-- full logo
-- icon mark
-- dark background version
-- light background version
-- square social profile version
+### LifeCoin
+- gold
+- metallic white
+- premium coin identity
+
+### Lifetime
+- pink
+- silver
+- luxury lifestyle and fashion tone
+
+## Logo usage
+- Use the slong shape as the recognizable identity element
+- Keep spacing around the emblem and text clean
+- Do not stretch the logo disproportionately
+- Maintain dark or neutral backgrounds where possible for premium presentation
