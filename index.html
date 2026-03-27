@@ -1,116 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LifeVerse Technologies</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta
+    name="description"
+    content="Official home of LifeVerse Technologies, including LifeVerse RP, LifeCoin (LFC), and Lifetime."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <img
+          src="assets/img/lifeverse-technologies-logo.png"
+          alt="LifeVerse Technologies logo"
+          class="brand-logo"
+        />
+        <div>
+          <div class="brand-title">LifeVerse Technologies</div>
+          <div class="brand-subtitle">Gaming • Crypto • Lifestyle</div>
+        </div>
+      </a>
 
-<header>
-  <h1>LifeVerse Technologies</h1>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#mining">Mining</a>
-    <a href="#docs">Docs</a>
-    <a href="#community">Community</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        type="button"
+      >
+        Menu
+      </button>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Our Ecosystem</h2>
+      <nav class="nav" id="navMenu">
+        <a href="#projects">Projects</a>
+        <a href="#mining">Mining</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#docs">Docs</a>
+        <a href="#community">Community</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <div>
-    <h3>LifeVerse RP</h3>
-    <p>Play. Earn. Live.</p>
+    <main id="home">
+      <section class="hero panel panel-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Official ecosystem portal</p>
+          <h1>One home for LifeVerse Technologies and all connected brands.</h1>
+          <p class="lede">
+            LifeVerse Technologies brings together role-play gaming, blockchain innovation,
+            digital economy systems, and lifestyle branding under one official identity.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore projects</a>
+            <a class="button" href="#community">Join community</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img
+            src="assets/img/lifeverse-brand-poster.jpeg"
+            alt="LifeVerse Technologies ecosystem brand poster"
+          />
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Core projects</p>
+          <h2>Built as one connected ecosystem</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="project-card panel">
+            <img
+              src="assets/img/lifeverse-rp-logo.png"
+              alt="LifeVerse RP logo"
+              class="project-logo"
+            />
+            <h3>LifeVerse RP</h3>
+            <p>
+              LifeVerse RP is the role-play world of the ecosystem, designed for immersive
+              social gameplay, businesses, jobs, housing, digital progression, and
+              real community engagement.
+            </p>
+            <a class="button" href="https://discord.gg/rGU3pFrRyS" target="_blank" rel="noopener noreferrer">
+              Join RP community
+            </a>
+          </article>
+
+          <article class="project-card panel">
+            <img
+              src="assets/img/lifecoin-logo-professional.png"
+              alt="LifeCoin LFC logo"
+              class="project-logo"
+            />
+            <h3>LifeCoin (LFC)</h3>
+            <p>
+              LifeCoin is the digital currency layer of the ecosystem, built around utility,
+              identity, participation, and future blockchain-driven value exchange.
+            </p>
+            <a class="button" href="#mining">Open LifeCoin section</a>
+          </article>
+
+          <article class="project-card panel">
+            <img
+              src="assets/img/lifetime-logo.png"
+              alt="Lifetime logo"
+              class="project-logo"
+            />
+            <h3>Lifetime</h3>
+            <p>
+              Lifetime is the fashion and lifestyle expression of the brand, connecting culture,
+              community identity, and physical lifestyle products with the LifeVerse vision.
+            </p>
+            <a class="button" href="https://chat.whatsapp.com/IHG2fSg0gs9DzgN7SIkVtC?mode=gi_t" target="_blank" rel="noopener noreferrer">
+              Join Lifetime group
+            </a>
+          </article>
+
+          <article class="project-card panel">
+            <img
+              src="assets/img/lifecoin-logo-professional.png"
+              alt="LifeVerse Technologies ecosystem icon"
+              class="project-logo"
+            />
+            <h3>LifeVerse Technologies</h3>
+            <p>
+              The parent brand coordinating ecosystem growth, strategic expansion,
+              project structure, branding, and long-term technology direction.
+            </p>
+            <a class="button" href="#docs">View project docs</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="mining" class="section panel mining-panel">
+        <div class="section-heading">
+          <p class="eyebrow">LifeCoin mining model</p>
+          <h2>Mining estimate calculator</h2>
+          <p class="section-copy">
+            This calculator gives a planning estimate for LifeCoin mining based on hashrate,
+            network difficulty, block reward, power usage, and electricity cost.
+          </p>
+        </div>
+
+        <form id="miningForm" class="mining-grid">
+          <label>
+            Miner hashrate (MH/s)
+            <input type="number" step="0.01" min="0" id="hashrate" value="500" />
+          </label>
+
+          <label>
+            Network difficulty
+            <input type="number" step="0.0001" min="0" id="difficulty" value="1200" />
+          </label>
+
+          <label>
+            Block reward (LFC)
+            <input type="number" step="0.0001" min="0" id="blockReward" value="50" />
+          </label>
+
+          <label>
+            Block time (seconds)
+            <input type="number" step="1" min="1" id="blockTime" value="60" />
+          </label>
+
+          <label>
+            Power draw (watts)
+            <input type="number" step="1" min="0" id="power" value="1400" />
+          </label>
+
+          <label>
+            Electricity cost ($/kWh)
+            <input type="number" step="0.0001" min="0" id="electricity" value="0.12" />
+          </label>
+
+          <label>
+            LFC price (USD)
+            <input type="number" step="0.0001" min="0" id="coinPrice" value="0.10" />
+          </label>
+
+          <label>
+            Pool fee (%)
+            <input type="number" step="0.01" min="0" id="poolFee" value="1" />
+          </label>
+
+          <button type="submit" class="button button-primary full-width">
+            Calculate mining estimate
+          </button>
+        </form>
+
+        <div class="result-grid" id="miningResults">
+          <div class="result-card"><span>Daily LFC</span><strong id="dailyCoin">0</strong></div>
+          <div class="result-card"><span>Daily revenue</span><strong id="dailyRevenue">$0.00</strong></div>
+          <div class="result-card"><span>Daily power cost</span><strong id="dailyPower">$0.00</strong></div>
+          <div class="result-card"><span>Daily net</span><strong id="dailyNet">$0.00</strong></div>
+        </div>
+
+        <p class="fine-print">
+          This model is for planning and simulation. Final production values can be updated later.
+        </p>
+      </section>
+
+      <section id="roadmap" class="section two-col">
+        <article class="panel">
+          <p class="eyebrow">Current setup</p>
+          <h2>Built clean now, ready to expand later</h2>
+          <p>
+            This site is structured for Cloudflare Pages with a clean frontend, optional backend
+            functions, branded community links, and a simple public contact system.
+          </p>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Next phase</p>
+          <h2>What can be added next</h2>
+          <ul class="check-list">
+            <li>Custom domain connection</li>
+            <li>Real admin dashboard</li>
+            <li>Full token information portal</li>
+            <li>Lifetime product/store page</li>
+            <li>Game media page for LifeVerse RP</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="docs" class="section panel">
+        <div class="section-heading">
+          <p class="eyebrow">Documentation</p>
+          <h2>Project and brand setup</h2>
+        </div>
+
+        <div class="docs-grid">
+          <div>
+            <h3>Frontend</h3>
+            <p>
+              Responsive layout for company presentation, community access, contact,
+              and mining interaction.
+            </p>
+          </div>
+
+          <div>
+            <h3>Brand system</h3>
+            <p>
+              Unified slong-style identity across LifeVerse Technologies, LifeVerse RP,
+              LifeCoin, and Lifetime.
+            </p>
+          </div>
+
+          <div>
+            <h3>Deployment</h3>
+            <p>
+              Ready for GitHub + Cloudflare Pages deployment with no build command required.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="community" class="section panel">
+        <div class="section-heading">
+          <p class="eyebrow">Community</p>
+          <h2>Join the official channels</h2>
+        </div>
+
+        <div class="docs-grid">
+          <div>
+            <h3>LifeVerse RP Discord</h3>
+            <p>Join the official LifeVerse RP community and follow updates.</p>
+            <a class="button" href="https://discord.gg/rGU3pFrRyS" target="_blank" rel="noopener noreferrer">
+              Join LifeVerse RP
+            </a>
+          </div>
+
+          <div>
+            <h3>LifeCoin (LFC) Discord</h3>
+            <p>Join the LifeCoin community for discussions, support, and ecosystem growth.</p>
+            <a class="button" href="https://discord.gg/uZu7pCxazP" target="_blank" rel="noopener noreferrer">
+              Join LifeCoin Discord
+            </a>
+          </div>
+
+          <div>
+            <h3>Lifetime WhatsApp Group</h3>
+            <p>Join the official Lifetime community group.</p>
+            <a class="button" href="https://chat.whatsapp.com/IHG2fSg0gs9DzgN7SIkVtC?mode=gi_t" target="_blank" rel="noopener noreferrer">
+              Join Lifetime Group
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section panel">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Send a direct message</h2>
+        </div>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          action="https://formsubmit.co/lifeverse_technologies@zohomail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New LifeVerse Technologies website message" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://lifeverse-main.lifeverse-website.pages.dev/?sent=success#contact"
+          />
+          <input
+            type="hidden"
+            name="_url"
+            value="https://lifeverse-main.lifeverse-website.pages.dev/#contact"
+          />
+          <input
+            type="text"
+            name="_honey"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <label>
+            Full name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Subject
+            <input type="text" name="subject" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button type="submit" class="button button-primary">Send message</button>
+          <p id="contactStatus" class="fine-print">
+            This form sends directly to lifeverse_technologies@zohomail.com
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> LifeVerse Technologies. All rights reserved.</p>
+      <div class="hero-actions">
+        <a class="button" href="https://discord.gg/rGU3pFrRyS" target="_blank" rel="noopener noreferrer">
+          LifeVerse RP Discord
+        </a>
+        <a class="button" href="https://discord.gg/uZu7pCxazP" target="_blank" rel="noopener noreferrer">
+          LifeCoin Discord
+        </a>
+        <a class="button" href="https://chat.whatsapp.com/IHG2fSg0gs9DzgN7SIkVtC?mode=gi_t" target="_blank" rel="noopener noreferrer">
+          Lifetime WhatsApp
+        </a>
+      </div>
+    </footer>
   </div>
 
-  <div>
-    <h3>LifeCoin (LFC)</h3>
-    <p>Money truly belongs to the people.</p>
-  </div>
-
-  <div>
-    <h3>Lifetime</h3>
-    <p>Wear your identity.</p>
-  </div>
-</section>
-
-<!-- MINING -->
-<section id="mining">
-  <h2>LifeCoin Mining Calculator</h2>
-
-  <form id="miningForm">
-    <input type="number" id="hashrate" placeholder="Hashrate (MH/s)" required>
-    <input type="number" id="difficulty" placeholder="Difficulty" required>
-    <input type="number" id="blockReward" value="50">
-    <input type="number" id="blockTime" value="60">
-    <input type="number" id="power" placeholder="Power (W)">
-    <input type="number" id="electricity" placeholder="Electricity ($)">
-    <button type="submit">Calculate</button>
-  </form>
-
-  <p>Daily LFC: <span id="dailyCoin">0</span></p>
-  <p>Revenue: <span id="dailyRevenue">$0</span></p>
-</section>
-
-<!-- DOCS -->
-<section id="docs">
-  <h2>Official Documents</h2>
-
-  <ul>
-    <li><a href="assets/docs/lifecoin-whitepaper.pdf" target="_blank">LifeCoin Whitepaper</a></li>
-    <li><a href="assets/docs/lifeverse-rp-whitepaper.pdf" target="_blank">LifeVerse RP Whitepaper</a></li>
-    <li><a href="assets/docs/company-profile.pdf" target="_blank">Company Profile</a></li>
-    <li><a href="assets/docs/lifetime-whitepaper.docx" target="_blank">Lifetime Whitepaper</a></li>
-    <li><a href="assets/docs/cac.pdf" target="_blank">CAC Certificate</a></li>
-  </ul>
-</section>
-
-<!-- COMMUNITY -->
-<section id="community">
-  <h2>Join Community</h2>
-
-  <a href="https://discord.gg/rGU3pFrRyS" target="_blank">LifeVerse RP Discord</a><br>
-  <a href="https://discord.gg/uZu7pCxazP" target="_blank">LifeCoin Discord</a><br>
-  <a href="https://chat.whatsapp.com/IHG2fSg0gs9DzgN7SIkVtC?mode=gi_t" target="_blank">Lifetime WhatsApp</a>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-
-  <!-- ✅ FIXED FORM -->
-  <form action="https://formsubmit.co/lifeverse_technologies@zohomail.com" method="POST">
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="LifeVerse Website Message">
-
-    <!-- ⚠️ UPDATE AFTER DEPLOY -->
-    <input type="hidden" name="_next" value="https://lifeverse-website.pages.dev/?success=true">
-
-    <input type="text" name="_honey" style="display:none">
-
-    <input type="text" name="name" placeholder="Full name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="text" name="subject" placeholder="Subject" required>
-    <textarea name="message" placeholder="Message" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-
-  <p id="successMsg"></p>
-</section>
-
-<footer>
-  <p>© 2026 LifeVerse Technologies</p>
-</footer>
-
-<script src="js/app.js"></script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
